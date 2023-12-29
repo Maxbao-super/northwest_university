@@ -1,0 +1,1400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>简洁报告</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="toTop" content="true">
+    <link href="css/index_2018051810.css" type="text/css" rel="stylesheet"/>
+    <script src="js/jquery1.42.min.js" type="text/javascript"></script>
+    <script src="js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
+    <script src="js/esl.js" type="text/javascript"></script>
+        <script src="js/toTop.js" type="text/javascript"></script>
+    <!--解决IE 6不支持png格式的代码-->
+    <!--[if IE 6]>-->
+    <script src="js/png.js" type="text/javascript"></script>
+    <script>
+        DD_belatedPNG.fix('.pngfix');
+
+        function ShowCharts1() {
+            var pieData = [];
+            pieData[0] = {
+                value: 4871,
+                name: '原创'
+            };
+            pieData[1] = {
+                value: 1156,
+                name: '重复'
+            };
+            // 路径配置
+            require.config({
+                paths: {
+                    'echarts': 'https://staticxin.paperyy.com/static/js/echarts-map',
+                    'echarts/chart/pie': 'https://staticxin.paperyy.com/static/js/echarts-map'
+                }
+            });
+            require(
+                [
+                    'echarts',
+                    'echarts/chart/pie'
+                ],
+                function (ec) {
+                    var myChart = ec.init(document.getElementById('cnt_1_echart'));
+                    var option = {
+                        legend: {
+                            orient: 'vertical',
+                            x: 210,
+                            y: 10,
+                            data: ['原创', '重复']
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            //formatter: "{a} <br/>{b} : {c} ({d}%)",
+                            formatter: function (a) {
+                                return a[0] + " <br/>" + a[1] + " : " + a[2] + " (" + a[3] + "%)";
+                            }
+                        },
+                        calculable: false, //拖动
+                        grid: {x: 0, y: 0, x2: 0, y2: 10, borderWidth: 0},
+                        series: [
+                            {
+                                name: '字数',
+                                type: 'pie',
+                                radius: '45',
+                                startAngle: 106,
+                                center: ['39%', '45%'],
+                                data:pieData
+                            }
+                        ]
+                    };
+                    myChart.setOption(option);
+                }
+            );
+        }
+
+        //正则表达式，获取地址中的参数
+        var reg = new RegExp("(^|&)data=([^&]*)(&|$)", "i");
+
+        function getQueryString() {
+            var search = location.search;
+            var param = search.substr(1).match(reg);
+            if (param == null) return;
+            var encode = param[2];
+            var decode = decodeURIComponent(encode);
+            var data = JSON.parse(decode);
+            var urlMap = data.UrlMap;
+            $(".repTabLink_0426 a").each(function () {
+                var key = $(this).attr("href");
+                if(urlMap[key]){
+                    var url;
+                    if(urlMap[key].indexOf("?") > -1){
+                        url =  urlMap[key] + "&data=" + encode;
+                    }else{
+                        url = urlMap[key] + "?data=" + encode;
+                    }
+                    $(this).attr("href", url);
+                }
+            });
+            $("#navigation").show();
+        }
+        $(document).ready(function () {
+            getQueryString();
+            ShowCharts1();
+        });
+    </script>
+    <style>
+          /**
+        * 非至尊版报告检测报告结果样式
+        *
+        */
+
+        .ReportResult_Con1_new {
+            width: 100%;
+            height: 40px;
+        }
+
+        .ReportResult_Con1_new ul li{
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        .ReportResult_Con1_new ul li:nth-child(1){
+            font-weight: 800;
+        }
+
+        .ReportResult_Con1_new ul li:nth-child(3){
+            margin-right: 40px;
+        }
+
+        .color-red {
+            color: #ef001c
+        }
+          .repTabLink_0426 li {
+              width: 192px;
+              margin-right: 0px;
+          }
+    </style>
+</head>
+<body>
+<!--底部弹框-->
+        <div class="new-guangg">
+            <img src="images/close_gray.png" class="new-close"/>
+            <img src="images/new-head.png" class="new-headbg"/>
+            <p class="new-head">第3代智能语义降重模型</p>
+            <p class="new-secHead">进一步优化修改后的语句通顺度、连贯性、上下文结构。较上一代提升30%</p>
+            <a class="new-a" href="javascript:void(0);" onClick="goJC('advert_reduce')">立即体验</a>
+            <p class="new-lastText">最高可降低75%比例</p>
+        </div>
+        <script>
+            $(function(){
+                var error_word=Math.floor(Math.random()*(100+1-0)+0);
+                $("#error_word").html(error_word + "个");
+                $(".nb-close").click(function(){
+                    $(".new-btbox").hide()
+                })
+                $(".new-close").click(function(){
+                    $(".new-guangg").hide()
+                })
+            })
+            function goJC(e){
+                var newWindow = window.open();
+                try{
+                    $.ajax({
+                        url:'http://www.paperge.com/api/user-behavior/user-behavior-collect/3/12',
+                        async:true,
+                        data:{pageInfo:e}
+                    })
+                }
+                catch(err){
+
+                }
+                newWindow.location.href='http://www.paperge.com/check-pay/reduce-pay-task/G202311281617180958'
+            }
+        </script>
+<!--topbg-->
+<a name="top"></a>
+<div class="topbg">
+    <div class="top">
+        <div class="logo pngfix">
+                <img src="images/logo_-1.png">（简洁报告）
+        </div>
+    </div>
+</div>
+<!--topbg end-->
+<!--wrapper-->
+<div class="wrapper">
+    <!--wrapper_topbg-->
+    <div class="wrapper_topbg">
+        <!--xp 20150305 begin-->
+        <div class="type1" style="font-size: 13px;height: 14px;line-height: 41px;"></div>
+        <!--xp 20150305 end-->
+        <!--wrapper_con-->
+        <div class="wrapper_con">
+            <div class="wrapper_conT"></div>
+            <div class="wrapper_con_content">
+                <!--TextInfo-->
+                <div class="TextInfo Mar">
+                    <div class="navbar">
+                        <ul class="fastBar">
+                        </ul>
+                    </div>
+                    <!--TextInfoCon-->
+                    <div class="TextInfoCon">
+                        <div class="TextTitle" style="width:129px;">文献基本信息</div>
+                        <!--TextInfoContent-->
+                        <div class="TextInfoContent">
+                            <div class="TextInfoContent_left">
+                                <ul>
+                                    <li><span class="lbt">检测文献：</span>TCPIP协议族：互联网通信的基石</li>
+                                    <li><span class="lbt">文献作者：</span>俞家宝</li>
+                                    <li><span class="lbt">报告时间：</span>2023-11-28 16:17:22</li>
+                                    <li><span class="lbt">段落个数：</span>2</li>
+                                    <li><span class="lbt">报告编号：</span>G202311281617180958</li>
+                                </ul>
+                            </div>
+                            <div class="division_line"></div>
+                            <div class="TextInfoContent_right">
+                                <ul>
+                                    <li class="title">检测范围：</li>
+                                    <li>中国期刊库</li>
+                                    <li>中国图书库</li>
+                                    <li>硕士论文库</li>
+                                    <li>博士论文库</li>
+                                    <li>会议论文库</li>
+                                    <li>报纸库</li>
+                                    <li>中国专利库</li>
+                                    <li>中国标准库</li>
+                                    <li>百科库</li>
+                                    <li>网页库</li>
+                                    <li>中国共享库</li>
+                                    <li>自建库</li>
+                                    <li>工作总结</li>
+                                    <li>思想汇报</li>
+                                    <li>项目申报书</li>
+                                </ul>
+                            </div>
+                            <div class="seal">
+                                <div id="SealArea">
+                                    <div id="SealBg">
+                                        <img width="125" height="125" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAIAAAAA4vtyAABpD0lEQVR42sx9B3ykVbn++aZm0pOZ9GR32WWXpS5NQLgggiBSpFjgKiiiKAiiAoKgICg20P+1ggqCSpWysCV9MjOZlkndzfbeW8rMfL1/3/m/7zdLCJvdZfFe7+/O7zMO2WQy85z3PO/znPOe9yPSv/khys5XUYSviqLAE57n4bmswv84QcxJUlaROfgOL6iCYHGmrOd4QVEnqaXlFTohKpKqCKIEPyTwvCiI+BKSKmuGrAs5fp+kcqYtaaYsKpqhirbEaTlZxdcUpbyscIoGvyvCn9ZVTZUVqmlU0TVRFTSNNw1BU3hVzGucLopwaRL8ORke8P7g1zhJnvmJ5GmPwkebehw7LOR/B/fC2y28M3gCKHAcfEYN4VNkXRYUMS+JeUWFQeFNQeYU5YCqcLIuqkZO13lV5RRJ0lTDMuGh67ppWzq1RUufoBar6rpq2TZVbZPVZADPsgxV1+CvOC8O4y3Jppqz5N1KTsuNq0IeIKayZqsmDKrE8TDSqigULlmUCrjDBcP/7wD9fwN3QYAo5eFdqup7n4FnOfhIoqQJvAIXfnj4SYkVFdZWEdVJVT6gSqJtGZRqtk5NDVClcEmcNTFmHdhLJw/Q/ATlJ+3xCSoIlOO1feP6/gmLl6lum6YtGDZnWLxpcYYJoS3DZFBUGFFVyMqGKJgKTh0e552o67JuyJKAl3gQXJheBegPRs+7yE4Hffr3D/7W/x3c3wsKGWMfB0BWnLk8Lit5J8ZMXqOcTuGraFJ4wGcWqW5QTdm6hQ3H+KXL9MVL97/+6p7nn9/0iyfXPvDD9fc+vPbeB1fd9+Cq7z+8/7s/Uv/60o7fPh2958ENz7xA9++jlsLu3Q2BL9mGQqlMkYU00YARoKyRFfIwb1TbZk0zbxicZrAaTAUVJsd04ArvdmqyzsR9erxPff//EO4QQUjrhc+gyBD+AsxrWcnJY6ya5RQBYkqXDDOv2mMs3Tc5sXH9nnhC3bOV7t2y/ydPpc68JDFvUbpxQXT2idGG+eGSph5PbcQdandVLfNUtVc2Li2tHTnrgu7jTn7OVx371LXCay9OvPpS8p7vZm771uaf/ZpdvlzfvMEWspatAdyTMPNg1kimLhiiYgoWFVVNzrJmDlKCgjEOQ+68zym4p5NJgSEPwX3mJPi/we+8UJi2vCzBJQD+omRp+jg1BFs3eMHYvE3uju7/45/X3/vAyK1fTX7yxp7TL137lW+O/ejx1ed+ooOUtrsCXcTXSYp6mdIUKR0gpUOkrJ+UrShp2NpyUnregmTD7A5X+TJS0jdn4eaLLhs46ezXSVmUKYuXNqTnnDJ4wWWrvvz1jT//5djSt/XRQXNsAsgd6cuyVUjEQEB5luaR93hZ4d8NcwdG0UlJ4vSgno77FND/F3GH0AbogUw5GAJZgsRIbQpUS1WN7tojLe/a88OfjF5xbfy4EzoC5a3E2+atWEq8nWUNiXknp0qb46Qi7Q4OMaHOospYSSheHIr7QnF3MOYJ9pfNWtt48t5zLl3ZdFKvvybuq8kU1fW5q+IO6D3EHSdFCaa4lymPuKq6fXXJ+oVrT/vYhod+tPflF7XNqyk3SVWZmoah6dSyUd6oKiuDtBIxOEAeoZDC/DSdwWdCLL//8X8Idy7PQryrJgg/zQIRwgub1qzb/Ic/Dd59b9tZF7xTHAqTohQJpFxFMcYXJ2TQE+h1BTpIIOwOhr11UU/DoHt2moT6XXUZV0OCaYi7mqJMUydpgCtasaCv5uSByhP6fE39vrqUN5Rwlw/5gl2h2sys44Yb56RLagH6GCmLkHK43iIlb1e3xK/8zNrf/2FsdIWQzbITeTkvC6bB6RroKFYUHLXKI/SyOIX7kfAt/Kfy7uPfhfvMUS1MQ16a1CQeRa8M2gAFMsfmWIWF6cyJlsyaFCf1OLt6eO9f/zbwzbsHP3tT+MSzosVN/UVNo/ULR+eekQjN7/Q1pRiI2YZ+b1PK05B018MFT1IeAHRWwt3cyzTCBbjDc/gKz5e6Spd7ytu9VWFfMOavSQTqEv76hKc2VnPC6ILzVi84P14xv4fU9zGNg56mNFPT6SY9jCvigXEtSi06feMtX1z/n1/YePed3IphSAMaNfKGkhcV0FrA5wA6JKG8tJ81JvJUhAys8CBUlZzCwz9NaZjpA3OMspL8TykWnmchNSmqnudYXshpugSWJKfqaGcokIu8Z33fqt8/mbzkytiZF4898SRld23+1S9aZ5/URcrXNZ+w7vjTM2VzB1yzE6QGoE+76uFrktTiVwf9mLsOroSrDr6TYeoHmYYh0jBM6pOkMUWa4EozzX2uWX3eOXClPbNjgaZUcF46uCAWaInjb9WkXMG4uzrlqx/01Q+5a9OkostVuixQutQbWBIILD/n/C0/f0LdtNIwRR3IRzZB4I5B6IN7MlXQuHYuTzkRvNsYz0FWKKTZAtDTueh/FXfkE82eEEB0K/vlvG4IVBNt2xYpNag1uWPVRNtrK772pd65C1oJs6QsJD32C1vas+tPz0QXnptw1awOzu2raAqTqn6mKU0a4EoxDQB6AffC1e2qhqvHFYy6gd9r4LfgSrpr+3w4G+AJfDPmqen11Pf6GhJFTZAVEp4QpAH4+aQ7lPLUAOgRT0Xa0wxkBawF34y7KqJMSY+vpIf42nyB19z+yDnnZ//8DJ3YqVCdpaasmGM6zUmWyKkiy0lczlBETdOy3Hv5VnAeU2rn38vv8oyHqphZRQVRLIiypalUl6mlK5MHxFhy3c13DrWc1uOtijB+IPE2b0nipEXRq6+NnfbRZPFxw0xzv6uhh5RH3VVpf62De93By1VfuAD3EYLXIKnNMLV9rtq0q7aAdYJUQu6FrylSnWaCKRKCC35gkKnqd4cSpCpKquCHB/z1KV8NvIeMpxrg7nVVdRZVxwN1mdKWnrLGtL8hQ8p6XcUdhHnbWxS/9sps91K6Zzfbt5aTNVEweMXKmSbQqJHPm5ykmFR8/2NK7fx7+V2Z8RAkHt4WssqkRC1wP7o00jd8331L60/ffPZ1WxZ8LFZc1+GvSAZCw+6qPuJLu8pTpLyPVPYXSMBTNxBojJPKqTAHsPrcwPX4BK6MK9jHVKdIFV6uagjnpAevlLc56WmCr33+OUnf7F53c5RphCtDqjIQ5kxNnIRgCAfgZzx1EPvwfRikdHFDuLQuzFT3ksooqV5JGlaSml5/KFoKo+iPkZLEgkWD19w0fOM3djz/D3XbVtD++ZwAoseUVTDbYDgURUMLiIZWKVwQ8aL4b9MzMxFXnQdYfEnhVQsMvWVPjo//8634p274Oyld/onr6Oig8o8XBppO6SEVHd76Pl/daqY8A3LbVRonJWGmuMtT2VNUlyhqiZPGhCsIV5ypnnrSS6rginorgSUi7nIQJwlSnmIqgKAzpAJEfZQUR0gxaMeYqzzuqUz6qtNFobSrErRN0gsj2tDvboS8CsPZC3OFzI65mtPBhYPzzwC931tZH/OWD5DitK8pzITAkWX89X2emk5SupQJLPWWvNkyb9W994tDA6rACqDdFVxyQPXwLuJT6P/P4C4f4aEc4QGgm7ZlWxq/dsWmH/0wcvwp/4CoOfcSfmInVfatfvQhUNAZEuotauzy1oe9DT3uKgAFPiR8jXhruj21Pa4aCFtgYSCBGFMJV5RUREhpAc0OUtFJKrs8wW5fTbi4PlLeFKlojla2dJeUhIuLe3xFEY8/7ujRDAn0g3L3lEQ9JTBUoOv7vQ3APEmCiSFJmqLuplTjSWvPv2TsCzdvu/qa3tpZkUA1vDgk7TRp6iWNMW9jvKi211cR8wXamKJ/ekoSN3x2srdLlLIQ+JKmZ1XRUTuSI2oOQl/A/RiF/IfG/UgPEC26Tfenh/tv/HKPKxAhZNkZi2gsQhW66t5Hl5Y2dpEyiMQYUxVnmjOeUwDrCKnpIy1DZN4gmTPEzHI4pBzCFrAOMwevHldJ3F+ZLgmNXHj16GU3rP3MLRtvu2PTvfdt/dEj25766fbf/HLjvXdt+vadm772tbWfvWn44iuSJ53TFjz+LV89iMVOxt3B+LpdxRD4/b5a+Aqeq4+UJj0VvcHmvnmn5G+7I3fzNyK+Ob2u4+KkGsRrP9PSR4Drm/uY+gypHiXBoUBFj7toaUl16urPjC1t5QR2wlBB1QDcBdydGFcKw8Dz4ofAfSqKDxvaBRqZ+gFBtkTbklROZ/OUN2keBKPIU5lOTmSf//vwmeeB8UkQ0uYv77/+i3a6f88PHnypIvgW8SUr6oE3IEl2kZqeooa4Z1bKjYI6DTLGXQ20AOkR+L2bQJBW9RY3980+ffVln9n5wKOTf/tHvqNVXLdt35atdG9O4STw+JpqQRYBu89TKlqmPmkJqrFrcuJArH/8ncy+595Yf9v9fR+7qjPUBIHfh5Tth6w75G3uYSpTgXpwsGFX5XBo7mj9gr6ixgQJgsuFbNHrBS6CTN6I2ZtARqkc8lQk/SVRlw+mXd9Zlx548TVbkyYNGcysIRqQdVlTlWROFPKmqpmTyjFaVjId5WPhE92wwBDJGlK5KKigzKmusBvWbPne97tPO/cNX9lyf0nYHYgX16ZO+Ah88kxl/XJSAsqh3wOfpAJ0BaTBAdLSRUp6/dXJoloYjBgJ9fiaE82nD599+brP37797ocO/PoPucVv80ODyt6dhswblopLC9QSTIUaBjVsDj63aVAVFKsA/DZuU5HquiaB77epISm7gN+sTeuMZHTfi3+Nf/UrbzcvWE7KgLsGSHWSVHaS4g5PRU8g1ANaE7Kudw68Q1CWgDXoojgTQvPlr+8lQbC4aXfVcKAGhBCwXM8ZF23+/TN08oA0Ma7wQCymxMpUUlRNGBdypmIciQ8OxX16pB+SLWeOBH5T5i2OsxTwbPKErkAW5TP9mW98Z2l5GTjALqBjb+2gvynDhHqYig536WriH2TKQNINkCB8E1IWGh9XU8bjTTNFPaS4jdR2tpyZvuZLm3/xG769U9u9187lYCwNChhTCGtFp6BLNQW3PiCBKZZGTQ0khaaiYJ2gVOYky1ZFS4eI27th+/ZwTN6zA9wxrrzoqiZydHzMGhzY+eunojd+trNlYbi6pccN0Pu7IUUXN/b5ZyVJAwj/CKlKMiBGcWBgEiQr5nQGWvrdzWkCrFXd6SmLkqIwCfQuOHv7g4/SjRsMWcgatpTXaB5Igx03OFx8PgJLH4r7dHwPi/vUCxW+qQkCVU0zj+u7KjWElUMrv3z74qLabkLS/vIVvvoVBDRcYx9BAon6yvsDIfAmKVIKLhE8JCTPJPC4tzJGXAmmFPzkyqtu3v3cP7gtG4E2Ye6A27KobZi4WChppqgavKTneUUaZ1VeBPMCHt3QccXc4iRekDjNoJJG8Z3a7JbNuq7bsiCZIpCAblsqz+dWbmBXbYJAgf8CoSV2day5//vhk87t8dWDoEwyVX2u0IC7Pu0Y2oy3FuYlMFLaWx8talzireklQIktEU9DxAtcD9KgtJ0EwtVNa++5lx/I5DQpD3Eh66bIi5oE7/lY/eqRcJ+aB9NxR55RbI5VRUGjoF62bhi985sdxcEk8a10h9K+GqBIsCrgKpP+JkhTMVIbK25Y5i6PeKrB5kR9aCaT6HQCbTXHD1zzue1/fJodGbJ4FoytTg2RKgCu4uyhgmiDEJZs3ALNQQaRDMAbZAOMBi5g6ZqsG5JtGaZiKQY83fLsn0G97Fm8WJHB5luqqssGsKKkCnmIFcuipg5Tw1YpUJKodPesuOX2jroFQPT9pBJMU8ZbM+StHwKbRmrjLnS8yaKGlK82Dv/pbYj5G+L+ZlwUYsBbVCRJUau3euVX78gPDSiqgFOPF9SsAKnmGPf8jsgzR+IpVqE5HiiW0rG9Wx9+pLuqsYe4RwKVGfdssOC9rhDAOuSuTfgauz2NKTIr6qvtIaEB3ywQ0SDDw6QiGjp+1SVXb/v7K/zAoC3kDYRb4yQR3rolKoXdNRGlsaSCT5dVW1Aoi2v3lqKZusWrzvabIlKRl21B1Sx27/bBW+8AZxBtPG7X24sty8IPABykicD4MDDANiru0ApZi9+rmhOWBSRGx/ZlX34lc80NbZXNQOKQz+PuYMJdj9neMws0JST5PlcQRgImaA+pjLlAYs7uc81ZWdKS8YDkL3m7vHbgjjvFdSN5Ku7XZUnUtLxyiLs8Is8cKa8e6ZE1TNyMG5/c/l+/i8w9tYcU9XthVtamAnMjnqaYu24FUz8KntNd31PUFCf1CU9wkISGXfWAeKuvJnb6+Rsf/QkdXYWEQCmoT1GXRdXZkAKsNRNwtbmDFzyHFAnoqxi9ziqQbuqinDcFmt8fOefTfLpTHEr2zj2nm9T1fvqLdCwv79kwcMPN0qYVhiSB0FBRWCuyrkESVmyZBcZSVVbV84bBAvS2Tnds3/XUbxefeWFbSegtpmwJUx4PNIwEWpzAhzkainnQwYGpHnI1p0hjGiSmfxa4kH5/dSvxvFkZ2vjoI/rEHoFaOAXVI0bwh9CRh31wVLdsbe8ri3tOv7iNlOEeEC4czh5mmsP+xrCvuc/VAooFdAIQzjBYcKZmyFUeJt53fIHhy68Rly4zlJyMy2YU6ZvHlW5QKZxl5DRDUG0NyBtg0rVDHjZoB0uFJ7KpWjo38q0HlpPadl/tMk9J8rSPrnz8/jZvw87X34nUzwX+3fz8y5IOaMOgCQpkW0OHNGypJnzLlnIyl+NlLWvScZMC91BQ3atGszfemll4Zqu3MuyqwOUHVzVIgH5P/WBJPbANhFEvqQHJEAnUR5lG8BxRf9VgoDpGfL0nnzP+6mLKygonyBJ3pLKDw8T7zGGBJziv4YdBK5mqIOKM1xSdgwC1hf2vvdh7zke7mAAynbeuz900SJrDpKbTXQlus89dh2+UVPaTIAzAkAe1c2fTiaPfe1hct8akKmeKeb3wPsDtCYXttKkLna+CcappyvRLMA1dc4pbqGKCY9i2Nlxev9zTsOqWr0uTu7f86qnlpLobNN+ln2L7VnCQLGQNPoVuUMjMGoAPecJydmE0FaaXgCU7kAo58DrAzpoNIlSd7B3c+NUfdDScDAk2Qor7F57a7avoJbgysdJfB4o+6WnJMCB+asK+YMofXBNo6SH+V3xFI2dfvDe1hlcBdlbNs5CsNF7XkCMFTs6ruH+lHZ7fZ8Y7JDEpn4fgm5B54FBdwooUamtsd3vq058NF4X63BVhT2UY9Hjx7G5SM+JpBB7ELSH3LDDifUX1g/6adpDJpDR6ytlbn/iZsmG1CYQLIltx6pDeM8YHsXaqDERAvHAdgjvuS0P6NPLwPnf/5m8dFaHu0Hx+bBevmxOrVw9e9ulWUt7mC6757VOQD0DHAL6qpYiaYIKMMS2QX1RW4G8j12NO1hB9iQf/yUkyr+iAja2qxvr1+595OnXWxUvrTsg/9NDmT13ZU1QFchPk2SDTBFkq42nsdzWkSChKILuG0sVNrd6iGBPo+8/b+LUrQEfCOLOyvE/i3w1ziBFBkeSj4f6+h2GyLAtyYSwPyQLfMIg8eWRF+rrrFhdVp0nRqqL6MFMN3JIondPFAOI1A0xwhbcFcmkvaQI1Bmq3s6i8/fwrtj39ZyO7B0QnvKYNcg4cL/++BQlHoSLWh430wmVhtY2Q37Ym+vFPABGPXHLtmlu+0uWr2PjIj2O1s8OnX7C3syMSnNdOyg8MZcyJPTmNozCWOiepeapjKgZmh5GDl1J1BRUIJhVcOgcxygoqsD1IHRgcmd2VX962/bkXx15/+Z0TF8VIScZdA4kq7KpLBhoTHtxuXE1Q1A+7apOu5g6PP02YaKBo64P3GdksEITMc/tB/Qq4OmsAXciKKLFH1DOH4s5J4Iw0y4YXAjQ08OQHdg3cef8b/qJ2j3+gqHIEGIZpTLpaHFcd6iAVfZ5QH1MdJ1UQ+0OkcjkpGr7gop3vLDcmxyRqTSgSqE9d0AVBgmA81BYcfChHukRb2BuJtoHP8pZs+eVvgUB2dcdaSfFyElh5131UlTY9+VSsqr537tmbnvw9ZG9l8oCFYY0LdrKFVVNUNsBMgchxkq2jm+RCmQb8n87q2rjMT5o8R3lqmmAO9nd2h8++pN0V6IdE5W4ARs24IZNVgcOKe5uigTlxV9kAaejzh9pcJa2E9C04mXvpTeAWnssCoWnwMcFT6xZYN07mD69npmfXgzqdkzldgRixBc2wTDA1+/7y3JuNJ3QRJlNSkfCVwkQDvZUizTDdBl2heNHslaWNEeLr8ZV0k0CHq3zw8qu0t9+ESQLCHLgPhh8LtjQFWNUA3pvmgaelT+XIlwGkN3jJleAzV333+zue+2u6as4yF9jImqEHvjd82bXtpHLVt76369kXItVz2piisdZOUVdlEIy6ATnZNDSsGlHBTeF8UjSHzRQs78H1LEEFO5bThJyUg7eHSh+U1oH942+9lrnwYshbfaQMTBM4LCAcAL3dU9fnOy7m8oB2iC88M33DLW1nn/MqcceuvlZfv5oTJ4BbgFMh5HVTw8I/RTvieuQhAghmB85BUYB5T0HtpdOxcy5dwpQOeSpG3RUpUtztre704b5+ytMQ9VYPuBtHmOrusorhT1y0bNGpy//jovHXX6NUAukCkaVzoingB2Vxu5jT2dz0RTfAG2gXPb3Dv4fFXVcNSE7KJB8+7gzwLOq20chpl4kTe+JnXNRO3F1Vtbue/+OGbz34ir8hdvqiJa4qNhrnFQEiRhbG84ODkE0hqYCdApFToBr8izAAMm7J85ys5XM4q7BoE2AyFEgO1JBpXl38Ru/Fl73jKmkjvqQ3lGHqUyCO3SCLayLFgTBTnP7YpTQ9IMYT0Qsuf5YpWXvnA1SYyEsC5Ax4JUgwgLvGz8B9ZgVaAREYdlz/AjNLLXt8YvO9jy0l1RDOoMSHSHXKWx0uru/wIs9k/M3d3qo0qYiRQN+FFxptb+9fvmRieSfN5SeoyZu4RCpxAIIIUxye8DwLH0p991HAegru6c+nX5LBUVNgrckD6SSo9WW1LXTHVjCqueFM30mX7Xt7efS409srKnb+1x+3/OBXEKGTG1dLVm5iyVvhCz+ROvca08kums5rhbytOyOtSYWQh+hC2ylJkBg5XYKUqxg2YKdRGVzdjtdeDX/ssqWkdMBVMYrGsLrX34yWxV+1mpStqJy98yePW2Je2bdu6WVXRWZfoHSGeWGCxSmlS4VdEVY8JtyxhlSBycdLhiJQbbI307Hw41FSOQIanMyKuGuXBapbfUHgmVHmuH5SB4HQ7fUsdRdlvnIb5fPoZmWcqjlVNxXk06wmjaOuU6mgg4rmrfexykzcZ0IP8koSbIhfsD9bf/mndqYy87kbMG4P7F753buWkOqO48+Utm0AoTh8zRd6jpvLDo2MfPHurqLapYTprVogK7whGqrBO6+modqBiQyTALSM5FTmQQ6AlCjptmVoeRaYCLSXoUDo2wab2/b7Z3rmnZpyFY8y5UNMTY+7cZmrFKx42lXZ6vL+vSyw/Xu/ojprj4xsWnTtiq/eK+zdAuixkmqpYKslLEecmVen+9XCAMCb4rlJiAVce1WUzd99JAxy0BWIFdetIE2gZHs81e3eYIRBFzdA6sHXhUngtbPP3Z+MAyvlLQpvFySjoMGfVABM1FKmyqkcSFy7EOMmzG0KwWWavKLkqYqfML9pbf8Nn193z7cABZhrGvpSCZ5bwMeGCPYVxsPQcOSS537yHeLf89YrqTM+9g7j63SF2ok/evwp/ed+uifYvIwpC7vK2pjq9hM/uv7J32l794DXg2l3yFgesjaFblOdpqcdEciaZpbK9sTerb/4r87ZJ4eJezhQN8TMCntK+5hKsFddgWAXKWmrbtr0/W9rLz+7feF/DM4788DbL7E6CCWqyDbod2Cbw6+LzdTvWZkDc4GBmxkcvvyzUVKeIqXg1tIEt/MHixrivrqos2Xc66tb7qkAr7H2u/fR/Lhp0bxs5hUtz7FO+sKHoIp5HAKJmpaBC14QqDmsmTakvAw6z1m04qVVjz+2hFSAHORXj2IJoyBYNgU9JRg51dJYWRTQywm6TYV4pCvQ1LXg7ImOnm3L3lIPbN7195dT190UCTYv8VcPXvPF0cd+NpGMGmBLLTAw+DZkZJrD4z61byyr06AoiG9Zm4SZYsra+rWj93x3sacsRspgog8xoZWuurQ7BE6lz1cHTiVe0tJXu7CjrKaTlK392tcPrBsCQaVhmbfKisphcD902J33kTW1vA0ROLnp4UeXVTfGgdqYOsC6l6mNumr7SU3CU9tfNgv+arR+Tu/8E3tcdet/+XOqAoFaeVGHt4tLdI5SNlXFkCRLUw2HPWAMeHA0NphJyxLx82c3bxQpJ+N5AjXz8etaSdXQ126X5Rye38CtDHCosqmg4RRslhoq6GKIpDU33wE6cs/zf4P4AM4QFXN/xzso+y66XtVAN6m4JUMpzDdd0kDVOKtj8kzcCwZnCoEMCU3hjilRMzhQwCD9QVysHspcdT28PQCh04+Fab2uUIYEh7z1MW9tnFSDoVleXBYn/sSs+Rv+8JQi74FPAe7aFq3DrxNMZ5jCAYE8vFt436MrUhdd8johcXf1Kmf3C6K724Mb870VLQP1xydK6vqOP3H0Ix/tbj5z3XPPgkEAg8XBx1QNKigOzyD6aFItXFqBoAOegX+CaWjDBzN1dmx7Z/3CVNPCDY88YezbLe1dG6tZ2Eb8u6PL8GyHhu5DVUzAzjbgvXLwUkA7gq0royNLikPxOSdTVrApHRvKtNfOD9fO1ddv1k1D1GWDFyxBhL+uWLgxSBFzdRro733wqeIvAB2uKZ7BlAsCWJSpREGf2FQX3nq799SP9pAQgJB014KoTzs75j1FDXAB48e8lUlv8duEJK++amzjEPx1EaQpKNr3L0y+D/ep6YZvRTVghmb/+lxq7vwedxFWuGGBXG2KVEX8DYONp6w+9aOpujlhUtxfN2943ukrPn8nv3IFkDt4EFEzkYV5AULbMlUQMMjLcOHSuIaFJ4YCjkwyRV2Uczu2r7/z3iXlsztdtUs9ZenbvrbvzdfB9MfPvkQVJYPaYP9AjeD8UHhbNYF2DDAFKugsOXbaBZ2kck8qfiASXV43N0oCu5/7C75/Ew2pbsggHBVTQno1JUgw8FvTQJdm1lK/D3dABlKuyAJhgpcVcqJCbSDSXT/+WXflnIyzXwj8Hg8A0zbEXQ1RD1ZcjTIVPa5Aq78yeur52/70DwHLRc28emitNpm5v1F4UNsaS8TSV1wd9ZWPFGNVSY+vPuYJrnBVdTFVXbNOXnPepatnnzTgC6UCjcnZp0+88IYNoUFtdoKHAMHlb6eOGS5qm0gyEH0o4sCsAvqKsW/npj/9heoGkLi6eb28a/OW7z+xvGLOqlvvAL2Ruu5WsKY7/vY8sAQkDFkC6SmD1QWNpOL0EXhkIH7Lj37ZFihL3f31Ha+83Hf+NaP3PgxeH7QKBbQNh2FkhSo45IIJShSQf29BomBWD/nUBdyn+0eYlFlZwDUcUeBM4C7DWDHUd9Xn4q6qhBd8bFWvqyqC1h3LpxK4X+/rWXCy9PiTe3/1u5V3PbRiVR+Qq86qR9v3mAp5+OQ0N9F/192v+8q6SdGgp66/uDkaqAV/lCSBd5jy1084NXPOxQO1c1P+4DJPzcDVN9IdezXLHBMkOY9FDcDgsgFuGZSUBlQDF9gQDjChBuWEVf9Y3EZK2kuaVHl83Y9+0Raal+vpxM25sTFxcqcKRLJmQ7e/urdlAfhkXjfx0BNKeAXYBmNCkWwKE0nZ2RNdTgKDV1xnc2PAi7akSqLp7D5JMDzAyQpkEAtXhGGq2aCMnMlcWPh0VkPft0wEX6fi/T3/yOMSIbhZXkGPDU7MkIU9L/wjXF4fJUUjoAJclVEP7hinCBZcpognft11lN+lTW7c9Lmvb/3dM6bI7afW4f3q+yphNM2yLH5goPWUc5YQZqCkMUZq4/5GLPh3VXW6fP0nnrHngQfHbruz3Vv1BvEsazpBeeVlsEKSYUxOcLYG7C1nlTw4ANTdigzpUTNw01lDDyGAg9H27++uaQDRPTY6uumhH3d6K/uv/RKgydug92FayJyh93/pazCxdrzwogVggrk3dDz2BJkWt/A0Z11dETZu2f7wjzc99yoIeaAUqnGqLcJ4O+YAMoFoKCKIGcgolqbDPHD2nYVp16GPmbjzigGuSkXqzdq8bBhA9TQ3smLouk/HmMokUxH2VTt1hkA1VWlPGaDUe9IFu//8p51/+H/t887adNcPjLH9M/8WkQRZy8lZVczmxymu5IDEAFrQxQd/8EpxOaTm9e5qEEwxgvX/UXcoRsimr38D2G58ZLjr7AvbiCd97WfoRFagCp3k6BgHKiirKTLLQ5RBkMomoA9GVbNBBFIND30ANavylkd+2uqu2PanPwH/pi/8RLuvcvfTz6PqNw1h51bZzAnbD7SBAT73HPAEuC8HsWbCHMILphFQlkiBRqQptzXD4mqORJjO4zAZuaNvewLoM+q31GlHyJDxcWXdkHe88GwyeGqClCcCIazZd83JuBoyxB8nFcNlxyfAPDecEC+d373o/HzXctPZz4AHAIG79bIOflXWBV0yNF7Mw0yEbxqmre3eu/ITn3zDU5Jxl61z4y5dyt3Uy9QnmeqIt7jv/Iu3Pv2HvS++lH/q19ozf9jftoSTeR4rxuysLR7QOJNTKCgnABjEm4jLIJwpotcHV2iYkFqBqcd3bugixZHZZ4CeUbatDwcX9pa2TG5dBxNi1+NPZq77gsyy/Rd88i3CdNXMX1ZcMXL953Y9+0d24ygIGVuz4KVYQ3BOtsrTfe/Uc7RryJ/iFI+LIl9Yjy0EdeH6QNwLr/MuFasOCaMPYPvjK678YrenHngGEO93zU57G8Fa9qHIbgDV1+Wr7iXB7tKWXT9+Qtu0Q5Cm9rsVUVIIniPFBRSek1mIEUm3qKEfaO1aWh1azvgHPFUQ7H2koc+LJwL6SHCACfZ6Qx31c96ee9LIN+5S165WBB5RkIAF1QlDz1LbACGpGIYOtojHMgFdlk0WeVbSQRkCPwo2rockP3LBO8SbvOqzJs/tWrJ8mdsXu/STkDPXffs7S11lvM1vfOiRzuKGdV/6ZuKCCxcXlS5zhUa+/aAh5kCMU2QOSTeEgjiZvsbwboyrU1ta70YrPx3xmdAfdiTkg1YK016hKBXNINhsaWLr03/pmH1GmFT0u+oGXLOS/pYuX4Wzs187Wj5r3awFq+rmgsla9anr+a7Ee1usCi7NErBSoMyAvzQDgh33fCmX2/zEk8uIO+ItwfISd0PMqSGJEtzeHSX1o6Rm2F3RSpj09V+Qt+/F1RhRH7cMzabAxEIOd58BFkMVJJVTeSBcEY9I25aKDkcqLItDPlj17Xt7/KHlpHjXb/+ky8LQZ2/pJIGN3388feXV8RMWSVTe9Ojj3aRa7B4AKSouW9J52U1jr71DaWG5CUkcEun71iydeHdksOAU60rTefwQoGdCPxP36T+DqwiK5hzilkEfg0CYWLc6de0tQL8YjqSx19fUGahNuGq6vaHBqub1C05bseBUXFyZfcLYn/+BB8I1BQQlLr0pEuIOIQ8pChfswdAblr55Q/pT13cznkRRVcRV1etp7MYtXciuTvZgQphP/GVd/rIt9z0IoZpV8CwEBDbodMiKACj6IxOIWskNju747TOKJUDW47k8tSDBojUD4wNJctVjP36HFPeW1fdWHzeRSRsHcpHjTmnzh8J1s1ZedhNgPXzr7YuJK9fTaziFNECDijOWKC1QgZowO2csucjvapUPwP1II3FY0N/7SVkVcfdaBGMBE27rT3+bbDill5RnmFDUhXXOoP063ZURUtFXPCdZsyBK/O1FZdsfeETNs1hlI0t5SYCRIwASJHpBzufZceBoCF4u0rO0ZlaE8ScDIVBIYAp6mGowZilvY6+7ORGoS/qwhGFZbUv2hb9C9AG5I+eC0gWWwiVnyQaHroh7Xn2pM3hca+lsYc0K3OLEZQAevAzyvaZKtrX5Bz9bHmhe+4MfLCmujp15kSXbeyPtyz1VYDpGv/WQarCx2We0+6vF/ds5g1ecWQIvgpFu61j/JYCcNKbgPjLuB6f3YTn9SLi/F+aiMh33wlwD6HW0b5RdHh76yOURUobHSNw1CXcj2NeoDzNthsxOeGfHSdFSr3/tLd8w9k1QDd6tBrhDyBNgKsAD9xUlFl5NNa2xF18O+yuBmHA1xlMPbrjfXT3kDg74mqOuWTGmaoU32EGKBy+91h4ZAYmiiRw4JghhrNICd0ZNfmzHunsfbvXUtjNlnZ5g+Mob6OQBsDuACFgYEIDwrkFWqmvWbHrur7tHV2y++74oqdjw6C+owvdf/8WlpHTbD58aj7e1kdrE6ZeARkS7ooPhwiVljH2sjQFRoVCsFXov0qcZov8Z3PHXJBVfb1puUHDzSAEfC7jr6zev/fxX8Iyyqyzprelj6iNMHe4IeurTzOwYqY8T7zsez/DlNx7YuIXiOzbGNTFrKgTkKNhx1uZUhTcVCwTfzt/+DnRo2h1KuOsTDJLXak9oJakccDfGmDnAyAPeCuCH9d96kGazYyrKZEkXNJPD9Gxr4+1tiRPO7CAlg5+5RRjfnb7konZSvfG3vwPdLUMGMExW54DiFVMGrAzDADuv7dsRm7Ow1Vezqzsy0dXac+55+197p//j1ywhZVt++ysIbYh0Kmss2CADXD+PqVrD9WHIblOL9dNBxz2k9+FeOApzRIo/Ou7wegLPvhfyEFuiIiosZCxAYMfd34t7KruJt9cbTAIVk1n9BFdTgBsynsYRb0mby5s86fItiX7KYc0yvBpIdQLCmuUmwePs50VdgxEUt//0iXARkHgQUgSeLWJq4Eq6cXMr5q6LVrbEXKWvl1SO//5Z0BWCaoB1xBpETREm963+1l2tYOEqT9j0tz9QnUogcybG20lVa0lpLt0FshKPDku40QwaVtUExZapbMuGPTaUXupvjM45Xh3bJ2pYe7G3O7z1V79Xx/drmiEZR996PcRyK++CfnhbdCx6Zupf8cy8Co7hvekCIeqcNRBAqkF2HfvN04ni5m4XlrimPRVRV20vqclAmgUZUtyQIJVLixvWfP0bytg2mPGsAJPdBhFPNNXisfGLMCEBLNTO7lt1193duB6Ah7LwXBYTwnpwV03CgX6ACb1D3OlF55mr1gA6QLuQn0EdUtk4kE521M/tcFVkO7tFW84LPLdiuOeMs9u9waUkED7jcor8bPFYYaGqNjI10L0u4ghoYm77Y0+0kvLBm28ztGyWgqngqSKDB9ZEiG/1SIi/Sy/vLTEdBdmZ/3p0zplSMtNxt3hciBZUHthPptbkK68Nzjm9C48DVgH0wAqgIwfxHCge3uwi5clZp2iPPk7HtxtU3yUrB2QlZ5oE1Bev8aom8opOga1HV8Quu6LLhZU6ADqoUfCocKEsddfCxOl2l7xGyJ47vilZPNC03J+MnHX5eFcXHuWndMezzy8lVX2XXq/wk9ue/X03KWmrnTv56purv3LnMnf56L0PwAywLGAJ6uQnBSvUNQkLhqgl790aXXB+j7txb6STChDiurM+YkHaUMDhHzHSpSlHethwPqwqP8psOPrk0HETDGtBOKwPtyRK+f6+tVdcFwYP6KmKM3guOYynOxG6AW9d1BuMl7Rs/OhlO376pL5ta6E6UZc0AupdsJyFQ9Oilp5f/OayuSd2kuIBJCmEO+Kc+4o6ZxJBvydIWTRQAwoyv3MbVaT1//hLL6mLXnqZpouUz6//zdNDt98RJUWJ+WcvJ1WJj39c3LNetqiwb1u4eVabp5rt6pCFHMw44CAYAMix2AVFw2PdIpXHXlu845nnc2oWa3o10dSwQFACWlfFI+E+RS9HAf3YcT86LxWqNnXH6/OmABwr2VTbv3vnffdHSEnYU550Ts8CJw+Qejwmx6CW7yQVS93V4dMu4nqiIDrArOo5nkh5Dj6Yk6xsqvN7f/rzJaXBHhKYwj3mBWFUi6eeCVaPtJHioePOHvvT82siMSANVeN6b7+j21W9/rGfJU4/721P2fZXX4ktOHM5KVl17/1A3ICgIOY3/+YPrYG6HqYyPP9sObcTN5FlTTckHqs7sIwMDYkOEkUDfSRRG8kH20iIMJ3xZI0iHpZe4DqSCTo6pRwj7k6ukCXhYHM03XlAiNoSeGWBg3DVKRD22J//FPfVdDOlSeKwAlML6EX8Dbg75AqBQunxVPfNPUtobxcprs2B3QPc88CzuO8Mn5bdt/nW29tcWOULMgbSKdA6HrXy1jonEHEwwU8Nn3WhnIqMr12DI2+ZdPeGtnknLnMVvUPKt3z3IWFfdm9PpNUdjLacoh6YEDesTV96BQxM+KKrN9z1neWuytWX38iDl6WQ1VnZ5CkOAMUqX01VVKz74BX4RxNYCAyeBcEAVlrTcbNOl6brxSlOP/p6yzHifqSfmcIdV2rB12tYmw/+HN4DywmoZg0j29WeaTipG5Q3Ux3316dIEJJqb1Fj2tcy7G7qA86AOG48jV/8NoQVZAdTkAnYVxBJEH08ALFn/arLromQ4pS7HEYp7XBLIcEW+gFAgo0yTOy88+iW1WZ2HL3yqpHUZTeAm291eSMn/ofKi8LmzaY2vvbHD0fAxd1wXTg0DxTOtod/CK7K1rW+Rf8BqX/3X1/AznWm7AgcBz4dpqBVCHNQmRDgyKQmTGMLQYbs7eB+2F2LoyD738f9oC6VcYUHJiVYzbwEqU01FSPPsbjYD25w7ejIoo93M+URdzlE+jCpiXpACuIJukFPU7go2E68qTmn5d9aDD4kp+EQEvjYQjYPnjtHtezmFSPnXhwlxaCHkg7uzol/PPQ/1Q9gCSnKfOEWunuXihs60vqfPtVKalfd/IXhj13T6ikdvuf+8HEnpBZdsPvZ56OnXdjqroqffsG+waRhApsAj6gjt3xlube0vXw+1z+KmlLRWEvQTZDnePLcMBWsPcY6OhG4CIw1zGKcEcbhcZ+qKz8SrP8juMNV6BSlYHmBVMDdUinLOzUpii7s2b7m45/pcVdGvGV4VIpUt/mCzgmvpiHS0FEEVra4o2nB2IsvUorHhuBtE1zC5VncAKSmMJBJnnFBmCnOQIpgqp3GAPUJV51zQbwHYTDaGN/662+yxnfj+ouiUI7b0hOH97f1uZc6mbJEeXCis6stNDt29oWTqUxnqKmzcr44scdWzezGkb6zL3rbH4qedlbYXRVddKWuTuI2v2qxFEsYBZCOuvqBCv1DtZP6UOR+jOm30IMD1zs5FgjTNHVtz8SG/7y1kymJegHi4CCpTZO6sLcu5m5IkaYBf30f8UdKZm39+S9sJa/DHBYUgvVzAh4A1Kgl9WcSp58/HfdC8x087IMqvhquZW7v2pu/qrFjJi4MyqCszQPjFjUnR5KLfTWxsjk9xy1SNm/i1+2C8Nzwm9+2ev3J62/a+P+e6qlu6qps2fTCi2DNVt51X64vrlPcxdcg2jUZXsuw9ELZ3mFT6L8A+r8Pd4RexAYRrI5Fu+aEsOGrd3Z6y2NMZS+pAvGeYrDpBLp9V0uCBIfcZV0ktOGhR/TsfjzQwstEgDyB1avYnUfoSydP+2gBd1wncNU4vY4a4kytY50gXVS1F/s2ffcBzVBtPIKHdp9qjhzUxMW+upGrrn+zqmLoii+D6LY0lkpi/8WfbCfVHa6q6MWf0tetk0HzGoYJaopiclWdo76FkjnQM6pmzAS9oND/tcd/U8wcBXfsdcmyOXjHpg2ycvN993eWh+IE67eSpMbpVVSbIHVpz6w4qR4iJd2u0IbvP2yO78OlEVYkeAJExAIP3bb4ZDJx6nkgIvvcZdgWhwkV2kz1Oh6qz1MDk6DN71p9/8OKSUFEmorAG3gqDHABYZs59YLNt90Vu+aGbo9vz5tvYMUnpO8NGztq5y0lpdzGtWCrsV5M5bBbjciDgJGcsg7IpUDoIFqm4z6dyqdn0X8T7h/2wUoay/JZCQ9ogB7b8ugPu2sawNxk3DVREgSG6Pdg5XCMNAKMGVK8hClfef/31LFdJp6qlQ/iXmgBy8fj8ZPOKeDuRHewgDsYX+wA460F3Du9npF7H1QM24YEyIMQxCVMPDnH85nLL29rOF6dEGPlC3qDzdyWzZYO+VLa+JsnO90NQ7d+G0IEt6xN2SmBMQVbx1JAGbdbLUgVmFX1QxA/OnAfSDtTv3sITf33RyIPPp8VIOoVPJVJtz7xWLi2MUnKQDUm3PV4zJUE+9xNHRCyRc0rS2vfdlesfvD79uQBXCOXdCI4uIMsNU2Ti8YSJ34EcE+7Sp3eLxjvGU8jZFfsv4PtiyoTpZU7HnsCDA7EuyZgGRskWFsD8OjqR38Sr50rKpPZzvRSN+lddD6uCpiqLoyNPfcKr46LVDEMFIkgKGGGsVhApjjn97A4AOYNFuo5iB+L8/xAun9vgWXa4/0vdbTagul6ZvoF8QAXMIyax+MBGvbyojsef6QnCMRSksb2WU5/NBKCvNpF6jfOOmPT3JPai2q2PPRDOnkAgMphXlUhR3CIu26w4Uh84dlTuDsNvA52mkLcGWCuqkigcucjj5hqFmgai2OQ2mUs2wSOli1J3rPM32Jq7OCnP/9OSfWG73wbTwyoWLtlomfQscxRF7B+ERKyocGAgaASLYSfA5+kfsAyy3To/wXcD3md6ecIj9zgWJyJO8RGFiIuL2i8puDhfrrjgQciJRUxpijlqYuQYL+zAdLpqo2Xztt18oUrF5zYVdm07dHHzAP7c7p+oIA7+CbAHeg1393Te8JZ4JsA95QHe0/BfCk0uMOWXkwQJlGrp3zkjq/p4h6OWjnFxhIVSHq6QHVFlwWYNKCvcA1gIhepaB648DpImNhEw9TyyqSN3R103bCoc34MC10MGVgH/jREjqHIqsgdFuKjQH+MuM98hUPObx6xvxQIF1GafoHvwT67umrnOJ3DLsQQVdu/fU+PrzjqKsIWiqSm39UQAxXvresPnrR+7lnhhsYVi85ln/kzVUSe0qxhE/CsmmVnDWx+IQ0PJj75yTBTOuypDVcVR0jZoHtOzNWELYvclUAyYX9jh8ef+fQ14s7VLOA+IRp57OZdKH8Ez4ksITuHeiSBOzAGpvRI5/Om1yEfo835UIstIDmONF1m9pqFHy4ACrHsaHOsIsgLPKQfReaxrBNGRuAmc2NAy4JqCFiyRsWJSWyYSamYn9x46529vooetw9ouddZYoGoBQ0zWDkPzGabq7xnzhkbfvcbdeXoAVMAy0pgssDcz8nOfNm4pv8zn+n0YJ+WHuLrCTV01M8B65X01vR6g2FfsMtb20W8gxd9Qls5AD4rz2NdkuJ0YECKMBxAIWuYuE2hcJyhH2XdXJ3Zfe7Ycf9A6I+E+yGdXaagFwrtad89d4BijHeOJhl4AJHjOEqxB0Wey43neUmnAvjpbA4PckCe5PObvvJNMKtRlw9P0aNTxdTY6QplSmbDALQz5X93V2e+/5C5YRPEOyuohLKgpLEPuwgvvGfH6K23LfeUtzHF28++ULj/Wxu/+rlo4yznpH5tMtDY76oLE9/QovNprJfaJqsavG5hOYKOcBdwx5sKmNj7BWTiIf5zahFxalXrkK4hR8f0Q63uzsR9Zj6Yfp4LkjweBiv0ZYZAF0SFE3ROnOSUvKKNi0JeFSQ8M4Trp3leYfFwMg+4yzYYTn7jbXeEPaVxUtTja+6smtNR3hT11ce9DUk0nqFMaWNnsGXwrrvp9q0Q36YCPCPrNi8LHPIOqJx1d97T6q3s9lWs//wXtCd/tOOOm3oaGrFPi6ux19cQJZURd3F8zqnKm0uoYQgq9ofB/I4iHnF3HBAucsFI2Lp28Ljie1hL0yj1fd3rjxH3Y5kTH6jfZzZ9xBMpmuKcnIc0KmGZPFwS7oVxOs0qKmfKePhTYLFOTzLggu8bkoRtnywgGnbdl7/a4S5KkqK+mpNzd96z9/avp+sW4Mo56BE/SMGqpS5P16cuE9f0Y+UFpxJJ0xW8cQafg3jn2S33/6C7pD5TVhttPqO3Zn6Hp7IVTzbV9jNNGaYeiD7uKlta1uKUufKKagLGyIkSnpPDVUNcySq0VsQz3mCGj9KT4pDS+2NZ0T3GVd+juNCZza0PlvwLosOR+B1cZNdwaRWYB2iEzU9QldP2bstu3myworMTbwqGDaSf1yE7Ujq+f/SzN3W6/GlSFC6es/vW27d/+dZEaF7a8T3YKpqUtxEm9ekrje2rbapTwJ3VDR4MgCpOUttW1T0//69ozdz+0mAmsDDqmz9y5ifXf+G2/k98KtN8EhiwNNal+hcHGoZ//kslPwkAsxyu1YFrhZAHRQhfDae1InwQvXCnhsM1cZ4ea0fZGj16Yde/tstR6Kc8vV/dwfNNnGBpuo6fAzcgRecCO71j7eia117OvfT3jb/+9aZ/vgXcDJE6IXK4XSeKeVPCTZv16/ovubyL8fWT4p6ipu6a48LVLanS5tGqBWlvPZ4thvBlStd845t0Yg92IOItIii6o9/lMRN3nLi/vRqbd0rYHRi89Nrs08/THduVkYG1D39v6PwLEsGWDneok/ij889Y9/TTgDvw+gT+soSdFkSJFbEBgvLuLkHhJjRHooLD9iU6RuV+LHvWR+H9KdwPGfWpPA/fMZzWRvAzB954/aX/uPC5yuBfmucMPvELKoq8iWvoqqAo+WzWlk3TZpOp2CLwPZ5hBrkh5hgdEOLpspb+4uZ+X10XKXsrENr51JMUqz+oJJpE5hSZyymqsF+CKUWN5V2J089bQpilV1whrBsxbWvV7/6WOOE/VpY2DvhCCVdda1H5qk9+eu8b/1TZLKh1wTRwuz3vHLrFw91YgQ0xhfuiHD8T96kUV1hNBX47pKH3sTjVYykIOMYVrvfoDqLQqaPDfS4O9SEQzZ7N2zqvvO4Fb9lS4vlnRd3Ij5+gkHtt3EhAszo+NkEBd3OsvaNz7gkR4lnhLk94Qr3eUJKpipHKqK824a+PM9VdrvLEKR8Rlr1u2pxgaryikwmLkxVeZzlbNG2wsLu3D/z0sb/VNyZP+2j2kR/su+trsVnA7EVd3uLlhOliSOKkj3Uu/MjWRx7XJ9DyAsWzeFjJ/FCrVHDlRBYEMq6HgSTmNZFHK+iU93+wbvmwG9bvW7+dxjPTm/KIBgQwrphgjwhRwTvpZMeG3nr97aamt9y+N4nnH2XBlz526c6ONmrKkGJ1iKpJjrUpPN/3xE87iaedePuK56Q8xyVJU8Q3K+ZpSZFQwlPaTfx4sOL7P6cyh8eEclkqyUR0jididxwO+9/AP1hbV+Z+84ut11wzctJZXZ7KJQwTZdztrkCiZvbKj3w01XDiO5WNq774FXPNWtz81GxRV49lnXYmmjmec/bPnJzs7CAd412Q/rVVxpl5ZXqGRyUO3A7DD+bbOfZni/zE+nU7fv3Ttxac8rea5sx37tn21j/5Fav5sfFxqgv5nIQdBal+YN/Q577YTjwxd/GQZ45jmoJ4sM+NNar9fnBCge6KptV/fInCnzRVOctCFiG8gr0+AbsspBZQKNQ0dqzd/sgP1y06p6c8CO6p3e17p6IudcV1O266bWjuqbGSyn8SV/yCj8mRKBaxWlZelXIq+2FBhwu7vcqcJLOgy1TtYEuSQ+7P8990rTOhP8QuTQ1DTnRYEXJS4d5okuigpNEDO/t//LPwd+7Pj/Rjc3URmyrut4wcmy9sFgmD/a1zT2l3+TOe6hHSknSVpZmSmLcSBiDjCg54sNdxYv5Zu+PDVLewMCUvi5pJLJjsXG7CFCex8yKu8Rxoa188/1x4oXZXSZu3InLxx9f9/Cf7Hnhi+8mX95OqNFPcRXypeafzL76GfTpsymc5FjcdPzTuTnktECoH2aWg6KX3HWr5gMT7YdunTyXPw7bjzfLYrQTbc0AUygJwfVbROBPCUGPXbxpfOaqzOTy7Y1DZQsPJC1IWVLIl7Hz2z8sCoR5XANvvkCan+XlF0otlLwm8k0B51Bvsv/gKbiKLhTLYTl6HYCWQXA1ZANzHVRVxt+n+VHLZZTe87mL6jz97/49+IXct3f34o+n5H4l4mlDFk4oME+qtmr/tkZ/h6WxKpXEeK1KPDfSZY4BWWVALJ5ZR+B8Z93+hFOkY70PjiAI8/uKsL2H1nIqixdgHBsWgtqABm4ualOV4jgWPggvg+GuGYnD7B7/0lXZIp6QEG3u7wNLP7nM3peBiGtL+hjSp6HBVrPjylxSKPTIUDvs1ZC2TZPkcKEBWE7FZhoiV6+LY7o1/fHrgPz8nv/FK/rVXVn768/HauZAiIjCArpY0U5PxNLa565NXfTa/chCoBqzeYfXiMZbAsXlFFpzqbPzQ/Eye+Zfrv2YSeuHGjIe9sxvAgWZVc6p0VNmp1TfHVaztAZ3MShyelsejSdisEHIphBqQgz6Q7jzhjA53cYqUglTvAGtKjkt4Z/cyjTFSDxI+QcqWuio2P/GICgGu5AQxD7YgqwG/ixzqCYm3RJCDipzl+VWr1/7sV5nP3bTioqtWzD5rlb8x5arOuJp6i+e0+oIjpLbfVYe3haifu/PXvwYVb6Jj1v617bfCVTghg0tRh+P0fy3MD7sYMP0egYcEvqWp4LpZGeMaaF7leTxECZHAqnlRmQBtKfC6gEfRQbxrXJ438S49ux7/VXtRXY+3LI3b2XUdRcFeprbbG4r765P+pkh5Q4SUtVc0Z996EXIYL+XyquCcs1EIBJkocxMyULwM8Q9jrY+uXfXA49FATT+pixPsVx32VTv9nRoi7tAKpiblq0n6y8G4Dt38xd1b1mCnGcX8sCnuUKJXJCenyYe9Z9G/rF6mcJ9qMzTzfHqh4RPV8ezVpMTm4U3wgpZnTUXUNVHL63lWzDmHm6hk5QX5gJCnWO+m5vdtT138uTCpSJRWZbw1wyQULgr2uEqWM97hmpa1TQu7K+t7SFly9iIzFbHxxDfHWRqLpfsqcRhGdhrJO+v6uqKyuX29mUzL6XFPOfardFX1+otjpAxoPe4Opl2NXaQOzFiSeJbXN+19/hXc6bA1PG0Fsw9vNyXjcVW8m6l8lNsugFabeXQI71R1uH6jRzc+h6y6HOQNXD6UeQ4VKkRFTs+BrdPwlkAacAgHHxLyIi7Y4TkhzhQLu3cHb77qnLrD3kC6ZrDjE1TMayplZSOfZ3UerKw5qVB5//D1N4e9dd3uiiRTHauak6hqAdBbQws6605Zcdx5u088t7us9G2vb+uNX6L7t4hY7a86W1W4ZktgTmFTGsFZwBKwNhGsjLJn3+qrboRX6XHhfUkixNdFSvCGMb6aFGmOuWcnXDUDJNDpLV97+3eN9ZsNW4HXLbwIqmARoX/vMxzuwcvKIbg7tfzvbcjNvAfeMYb2wb6uWL4I9hMZTAatrLDw4sKEmhdEQ8Hm5Hl2XJCwYYWmgoTMTW2cHhxp5x6JDpWzAlaxGQaLLhvoBbuESFauoy0SXNBNAhDRPa5g/MRTok3Hj3zlZuW/frPr9m9tPe9TK4Jzez0lbxdV7n3q15qWL5wFfA93+Kw8z3LOkr8mFbqhiJYoTfzu6VRtS7urqptUd5bXRUKzE+7qXjeI09nporlJd+2IpzpO/MmFHxHeehuTq2HxAp6qdSoIcaFGE47KA+8/+HIQelE+ki067NL5VBIu3ERpegoFX5Ln2MILigKH/Qk0KgtmDsKC5cCfw3xE6QLpTeR0Pj+1d3rwNd+9gaYhSaheRGUSXsbWMR1iIwF78MbbEqQ06S/rZsqHm04eu+XmLR//VPbVF6yX/77tG3cNnngOzIMeUtxz6rnCQAaMvYANVZwLb/4HflUWcKIpuOGClbey7nwCUe0bWHHx5a0kECltXHPrnRs/d1s/oO8J4P3BPA0Jp1U6/OF2X+XmBx8y8/shu0+ABRIlbF0hS7jDx/O4jvpBCu8Yi9YPe7/TI+GODRwkPp/PchwIQMFprY013Zys43E6EY8z6Kol8gLH5SUIYqcT7/Q/cfAWZIpsSqaVw75sByy8iyKby1umLk2MR+oX9DGVPcWV7d7gqqZF2z9xxZrTL9h+xz2p8z/e3TRveQn+U6u7Yv29D+jcpK5R4d1H4f0TUKa4a6GqhZo/oDSwQFlqavsO7Pzhj7uZ0nTLXHNoSFrc1tc4CwIcN7udFp1YEe8NdZGi5AWX5JctA3GaN5SsjO0YsVRcxvamgqZ8oJE5EuiH1TaH6PpD7j87/T/xPsYydgDGbVLnXpPAbFi7osk505zAu5AZeVUB44LdTRSnX/y796Qp3CTFeT1V48HKC/CTnKGDiwVBQk1x7wuvJtzlYJGA39s9dZDzOovq42XN8dImbJJMirs9vqi3uDM4O7/0bZmquBsqydPLQMhUcTfmEuwZI/PwZrGbmyJHetONJ7UF6+29O+3xicFzzu8jZYlALbDNgAeropxa7/Jwcf2WW75ubNmo2QqPvTSw9ySOJcgTTTtKXUphOkNMHbs8n+mnDntnQhhxg8ejUZIuOjf0Up3meCKdnKC5/ZQaLKWTCt4AlqcSoCpMCnjuxLktTeG+QFMDABkix3OYKCAzTLASNfSNq/ouvCZJigZJaMAzO8o09ePpjmAqUB/DFmyVaaYo5vF2kqJVV36ebtvKU3X/jDocgvNOfnfy6poOPJ/lJEdWGPv2rr3x7tdLm/a+9jLV+Z23fzvpaQDaihdjfXaC1Ebc9ShySCDReNyu3/1Rn9ytUFNxWjUU7m8rHFnQFHIJ5JWZu6BHnx/TQZ9+P+DpzaIAd/Ao2IfRxNb78K+4hbR124rfPbPz6d/b69bgJjV2IM8LK0f2ZQaE/WN4atC5NVChAc8U9M5quwCW3gYZr+p6fmLr4090BGr7mHJIeH2kIc00D7sbEkXBMCmPuxrSpXVh4u0g7ta5C3f8+a+UFQ3NFiyzUAOC27ZO53VSuOk45kCRL2hKiBTwCxaas+y+Z95sn33O1m9+m3Jj7BN/aPM1tZLiVBXWuPa7m7vcDRl/46C7fBlDYld9Jj/aD3NKEpxjG84ZO5E/8n0UZ+gZDHPlMOBO7/91WB05fXV3artcYZUD/DgW7ciCmmepaamDIy9eft2vi8o6vvnNbSsGbEO0h4YH7nko/sMnrIkJw7SxdzNf+FO4blG48+2YLmKLZ6BMLPekQjzTdcK5rb6SNAktrwjGmKq0b3aEVCSLK6Le6hQzfxRPlBWPNs/b9dgjijhBgdr2K1pO1J0j3rojazRcBz7CzXSxf7LK0+17R2+/N3Pq1Vu+dX//pVf3ltWm3OWDTEOatET9s1PeWQOkoddb2+4ubSsLrfv2vfaGtTbFm11AptYl3EEs2D8cVInDXt+STkXsJAkz4RBiOdhHTUReBnbWsNuP4jgp7J7JSnk8jIBlLDzEi3OjV1FTxSmgnY5FoK0tHctIDFbVwdNPquqkqIh5WaKWuHdH+OY7nnN5/hIojV1y2e7b7+g69SOvnHbu1n++ZVOatzU0HyzLc3mnvZWpTcpgmvSJA4DVuEknqUUP7Fx3+zdanTZL/aSmz13ndN8IrfA1rMAzTdVpvJFG0VtNC/Y+9zI7PpkHnWdiG4v9tlqoOyvUmsGDHEmrWSKQNQDGTnS0Zs7/7LKipuWeqiQTSLtLBsDEBubEvI0DeEC2eaBozrCrFpRs15yFu578pcmP6dQGKQPzJieyMJ9UHkcbhpuXD3bP4d690/n0FFrAXcD7BSkF9jt4ykIWsW+VMz9BkoNekp1iEcjbZuHm3e/t3oHEMzTseo0Vr8YkpwrKpChnOd6gBt21dehLd77pcrcFKt6ornneX/oiU772m9+huaxmURgnjdcorzk9I/HWIjDkINk1FrSenrdsaht7//zX1oYFgyWNmNW8dVFXbdxXF3FO3K101Y3gYe3qxf6K/tu+SrduhrHMQs5gsSghZ6lTGbXwIEc80oDtRSWQKLY4seXhn78FnMX4YsWBvrLqNf+/uiuBbqM+8/+RRpflS7Jly7Kds03Sch8hhAVKgeUqW7pQlqMthdKWLeXRLtCWsrRA2kC2C7Rlu92F8vpKKVdLLsfxrVvWYVt27oQ4d0h8SJY0M9LMaEaj2e8bOYrjxIHdfdtt9eblybZiS998/+/7/b7T0BQ3t8ARGzQ6B/QuMPTgzYeNgPRJ7MLlY2v/BM4VGGwunUY/kcWxAqi5AuYWWJw1BuyRnwbIZ6gABQHjjcnIODVEm/DKCVwGPj/qOPymAthsCV4Dp0pmZ8W/xNIFNyApMEUEtdnDfLoAQufT4++88fayc39HkfWU7m0T/Qea7jLX7frGtzMHdwN9nwT8lYG/KqRYAJpYNMgLbBLz9jgJAF1xT49/+bU9pGrQ2OjV27pM2BYwoK00cVP2qL4xZm4ecC0duvnzyb42Rc1iFV5OYDOczLCiNHvXB5kTM4gY/MRSQDmXjkQGlq8coG2DxLyJGOBvY7WwrmrQpOVWdA2AYYeMdVFi6iUG7/U3ApcrKBhyyKfRy2LUAPP1cAbY0jw9Tus0P7PccwzLpbSQQ6mOAsOzqPU5HHwGMgVsAQQNLrQ3We5UJjW9IxIVX8YCk0n4y6qoHjy4ddXqdy9d/ntdRXtFRSeh15mojZXmDUT3+8pG99NPqfkUqxa5ggzk6HgmDb9ZYeC8cmBsGUXJqzI7GA7cfHu7zh43OUOk1mOoA0wxSDVvJa0gej/tdNP1npqWkYtXJta8pGbHMiqmrgBRsbII907mmFlFiWQuoIYtAOlUHsgFRsWZD1c912dy4XLf8y9Zu2jpWoO9V28N6K1eUuGrbgnS2OoQsTgA4LfpzfHb72SiYRUUk80lRT4t5zN5voRwwDhIbEZhmLnknlGSjDCFTJLNwsEXcwWOB2MtJ6QcgFQ8rBkevg8nIsMgPzi16O6k3OH/gIfXxjEmdqx55UXXJ17WV7xLTBuJtVNnaSfUnwjp0JvWEvPbdYsjjz8ui1yhmAfMNwWcAxzHFJdLY9O4rIiFXdtDd315vcHup3Cz0CCN3V5h0hSjmiOUM2Js9hub+oyOLrOjv+mT23/yItwmVivEzUsFOPfwWUqV7jhvXpg+6HPuo0xjBI7FKmrQqaIibBnsvOKW3qUr1HVvTnS/NfC3t3QDOzBX+kml11AHoD5I7GDs4pZGD6G7LLVbHvhHKRbHaWwq9hekNcOCvaBMJpdIqsnMXHLn8lOCiFtJRE4bSY0jyyUJHJSqgJThBMg54Psyzq4GO6P10k8vPEaFypflnmaFtFTAGPnYRKK9O/YvL4R/8NjGa67/jXPe7w2VG4lxbUVVx/kXuldc03b5db5HHlYOHlQA0MlYMo6FYjksxgfVkUai2+9/qLuiqRc33mNcNqZrwiEEetDxhl66wWdq9NGOoMnZRSr7dLVb/+23GPHF7XXa1gxtpUUKOdlJocMTMvd+2zwaCqD+TCLF8WqGOfTi6/2fvU3qfV9N7tj/rUe0UR9AXB24zRfX7NiwoUTf6DPUAoDtrHXt/vq3lXAQ0A28eRyyqZXAgcEF7g5Hb3qB5mmdoljZjFk0Ia1N4MpPTCbiIxOBYOGDQxPDOydHD2HhCnJLHodTalHyGZNe82XuMyXL43J+QgSiAEoMBvN4ITum7v1g6s3X2lxL3iIVoS/dPb7+3ezWeGb/bjFzTB1LYWkGi14IDCKvSiqXkQeG93/t6xuMNWHKCgTVr7MPmRd4iQN4DCh4nx7z1wG9AzsD9PWbzLXbr7pa2HsQG75wix36frDVck6YlOCjaJ9d+9RwD8hcKTE1p8BLcUajnALYB7JQj41Hnn0q+ne37/iHB3yu8/vNLdjgShrCRhw95jbVDWityh5D45C5oQtOsa1x1wMPiQePAPgFvQVBYwYcTKmibfKZQ+7ZTHGKKYxlC2lRARSWH9oaffK596+/LfDI6uBPfnUsPFwsKID5wOzgwGE2XSaoJaUvU3xBW2vCYxoUQDTInsupOLdEPTDgW7bCe97lXKwXh+rKMqOq4AMLeTXJ5VOMKDMS6lwxmxmIxL71BBxrrBWgDUG6MmBp7qWaAub5HXR9B41rK4f1jXGCOQkPqf5jiyv32gu4zhHOYlpg8jLQJdCwIoeVreCr4QK5c1qYc059z2jqicCbZUvalEqljhw5Ev7ifRso8yaagGvdRT4xoGuJkMaArhlgpYdyBIyOsLk+qquJE9zG3FNRH7r/ftbvLqhKUlUzaCIUgPBJJjsmJCe4hMJlVRZMoaSwuKDvOCBvjktk05N5dlIAMi8pQb/3s9cCCHlPb/Lfcqs6ulsG6izzU9mpNJ+C+yiMT+UmU4qGLEtMFSdhi1jeCJ8B0RQY2bykoRQcka0cPvSHrzzo+fGPVXA9xSLPANsATnhITqfhlVOKwmD1lsh1tW/53OfdOituO9bb+w31eNGOUk9vBAgqaYyYWnBpqKkW/ESHrnrHVx7Ip/aAY8QSCQ1FlEDBzD3EZQ86p9xLZghFr6kS8myA1UxmctM672VX95CKiLnRbXQiZTUv7Mfd765+qrEfcI7eDleIBi5X20PV/BG8zRfuTnd2qQVJ0GKWDMNJ+HvBfYiAK8H+8HwqyycSYnpMkbJcShTYnMRN8Mnksf2Bp59+tboOfOBaQr3rXLhlzYuZ8WO5ogyYEt5VosAfGNkxumUHn2FLC0nws+Gh0eb4YQE7hs4F5FDaxE1sWswc9HmSWwcEgB2KnOOK6hQ47iQj46K3QlFWmcnj773tvfamjaZaL2X162zBktxpR0jfcFLuOseAviFuavARS4fOuv0Ld0oet2bQRA7/cq68g3vm3u0y5J17r7nAl6kgxlEx2Y8eOaVO7v7160HHhf3E6rE5IhUL4qTVXdniI/bycKZ+oxO8DZarEZuXWNv0te4rrj36n6+rY2OgcDwA88Q4ZiAEMZVXQM2K4P9Tk1lmHGg9jsAC6yFyST41tm9v7OVfbPibz75DWd80GN9bflnHE98fGxjGIBKfB0CZFPIHd+w5tHsvdsNouVOMAAP81daJ4A3Q1Cen2R+EN1lMD0gKD4oODj9RVLOiCoZFUeQpHBYvK/t2HvnZ874LLm4nZj+xjFhwlYN24ZgAbOjFRfco91BFY4iy+Yl1M7HErrw2s2kdEKuptDwzuKbNJtMoNze70v9s+7VnptnKjhhLZSYm9q16OWib30vokLkhThp66FrwOX5DQ4g0RIkzpm/x6rABcxgOo8XRr6vtJpVdrmU7//FRzu0uMgmwFUDewfKCNUsWcQmiwkpqTlD4jMIrDKAdSYLTiiudUynZF+i98Xb3/fcc63j/6GCEHwWHARZDhg8mcZKQYkq7E0uTjUu2Xuv2OdkXhouwGTQ74KiQy+D2rHxBUKZ45UNOHBdFRi2AF2X6A9sefdTTvMBH6GFdVdxUH8POupLEG8tX6TtdBmt3fXNbVXP7uZeNv/cHsFqSoo5x6rRV0WI7OFRHK80S2NlxJ3L2pEQ5DV9KfSETzEmqIBUP7j/wg6cC9a2bCTVobRgglTFs7m7E/m7ijOhaS3IfIa4gjRmSON0YJTXd+prOCy/dsWaNsHOHWgTtkgoyWgHQ3DROMFISxQKXzWvptQIcVbAMgqqoAnfgj+9/OBzEdWKqotWlM1w2rYCzZ1M4aVwuaKqNE3FxGmm50FV7w1iCickdREc41ExQ4M+lMAwksQVwKyouFzqw/8N/fSFy861t1ro+Yo6b7XGD3Ytv2F4SOnasE5xyp31Zh6k3W/PuBx/cs2r1vjfeUvIZOMdcMpuS1ZmYWBswh60jEi/MnPF/Nvt+utaXuq1yYAyBRqsiNzY6+aOfBOmGdmJw62uBxQGUjOJyWCf4WLc2jCxKOaO6JrfOgSDHAq7f2k2oTvui4RvvTng9GWYCBFkUiqC/IDGmwI8D2skj4AXwx4K2y/nxVBLgvCpi+5qWHpDAomAlK3hUMQPQD806M+35QdA41hngGseW4FpO24KIm+AygBFzuJUS2wsk4DXIY4FaJI8wGzceeOCfArbGbsraS6z9RkQHHn09mEpvRZM2CQbOcUnoWvc7CJ2q9s07L/Wnt4qAVxWtJY/jpalsZtbaNy3XgUxbEMv9XKWs01nse3ZmW602GVB7wueSeVZrrZfyY2MfvPDSpsuuDjSf529Z3KWrieAmNRzR1Kurd5N6XAZC6vzG5i44mKQmZqwfMdSFSZWfVK23t277/g/Z7VsLQlYBUqdwopiBty8oMg78yWbgcAKim0xMYVBTFXhVRnORmqZ+WW23GJMrZ8rQyODeR5wzyZdaNbB3QBLB4YI4wGpxmgUoijhBA9RS3b6Lf3/t6A+fDK24qofYBoklpKsKmRvDOBm2ATiR19LgM9Zpw+0a+6km3IdrcIF3DehqPJS5Y8VNE+EAGKisqibBiMN71IqISktxtBCReCqnE8qQ92xy53JYfVcax8iXLz5bYNKAScEHZbNqmkPHBGaRe/fNHffe2etaEKXqBwjGy+AcAKz0GZxRBFsNwKpDdGufscVd5QxU2zwG3SZdRbepLrD8qr2r12S3jhRlHoy+zHO4ZUnKFxVczJ4ECy8W4QdjAn+8iCEOmS9glDyVBqQIqiFli9gyLeUzLDONvjRagLl1UHmtYYOVRQDpIvb1F3Hfk8geGN215821O7/0WGjZVevN9k5iihkwmQMmMUDqg1TzoHEhkEE3qfQYtflHiGFcYbolYgTRY7rNTYz7V/1SzQC3y+HqBW0bOGBVLMkQtJHjJROncdRZ+ciPkPusUsKZ+3ZmfbP0ZPSZVWsrW8DUxKyNuOrZ0OI3Oztx/lBjjGqO0fOjtCukTVIBshcwzu+xwotNg0Tfa7O1XXr51q89NvbSq0LYn0scznHHheMHCjisTskpKiCNlKqyam6ykMkoSCuYDM/w+SkxM5XHXLqI4QMW4GdKBHqCnxi0G84rr+KvkIqqogAmV4C5J7aPHHlpTeyOO3qa5rn1gFgMfp1lOlOqx21YUWreVjJ/mDjAvod0FX16i4c2DFGOOJnfa2xyV9p9ROexLzjy1HPgY0pT5meglFKC8AzFgeUSQVZ7nM2+n1HupfTCzHUU5RN04PdvrD/30k3E4KPMYX2djwCNdoQrmvsNLQGT022wuanaCOUa0M3H1bG6lqDJGTQh1AH31aW3t1F1Gyyu7vOXb/v6g9u+8/COR7594NVXskFP4egBlc+o+VwR6YyKs5gVFY42m1cZLIRRWAW7HjBCwMugemwCVxzKmC4DvDSpTkyoOz7IdXiyb/7x8I9ecH/uzqDdFaCrw+A8iTWut0V0ddq+ZGeIOPyG1oB5AUjfY3D0m+owo2CpA48KXwYqGvoN9iCpDDYuHX3yn+WxfRidFnKnTiM6Re4zRV/ucSiXFHyE3Gfeulnpt3KFWwk4qzlm8s03otdc00b0XmLcYnLFzM1dpDpqnAf4EhyvV2+PUM5B0hrTz4Mz209q4fYAChoEAkI7+km1V2fZQNNtZkun1dpF6O6Gpv6VVwzdf9/OH/9g7wvP7fvDxuTIdknlJ6Wp8WOH1MmUmtOyS6UQAM6lwJxaQcEpDfBFJhQc+tmLw4/9IH7vA+4VVweWXeyrX7QZV9lbwUAjuTNiMCtkwHG+QDjC4I2IA9kf3RSxuuCnbWZH7Nqb9nzt0c4l57RTtI8YAq3njT73s/yHh+FtlHzeTNt9Ihp6hv7Ycl3mx8Lvs4pVZpXplvlU6Q8nwRLkE2zHnwZuubnXYAuRiihoiqm5g67vBDJNGkZo1zBdH6Xt4Kw6DXUdpMpDrDGqEiQO0h+hnCMGR9BY2UuMYbpqgFh8xNhHjJt05s10Bfy71jkveu893FtvbH3mub6//9K+h5/Y9dQ/D61+ZscTz2594pmdz7842d5eHN1ZOLyX379LOr5/6tnV65de9Ka+Zh1dtR7r3SqA5sSMjXD1G1xeyuUhLSHQABA0saGrtzZGqlsA78aJfZulqZNUrFu8TN70jsoeBi7aRSy9yy/b/ZvXpGQSx91n0ohlOaZ06E/INz+X3NHun6ic+Wj8fka5l8M15XRzSfQZQWFB08CXeX27vvXNTc3OdYTqMVS2VziC1fPjlvkg3LDe5jNUe+HAmpye+oXD512yZcXKdhtgntrt+uY41sAiaAsbnBFTA3i5AZxEUTdCwFfXbtCRHpvz+M33Hbr3sdHvPrX/e09sPu+CdaTCY2mBu7vZ0ti1+FORv71x4Au3xe+668h3vzN6wy1uu6sPZ+kAyqqJETvubyROHOxN1feDalMtEdMCv7YoImSs7SJVG0iFT1cNPjZqqe3TWwMXrCiufzfb9nb4jrvDd9030bEZJ1eoKm7uEnIMk8YOIe24n1DBUiXIGfLVyKJPyH3OfNNclcqz5D7TqWKfuaIeZQpTsiooeenQ1snf/mLohus2EWvfvHP3nL9yi/MToN0ADGLmVh+xY0untfXwgw/Jb78x8tWvtJlq/CBBg8NdsQBMPwAhfE5js3K/YR4IyEM3u222vgtWjL/8Wj46zPX3H33l56EbPzdwyZUDS5Z6zXB09AFicqNeGwGftFGWHmutl66K6mrgkI1QDXHKFdfND1OtHjP8clyV0W/Ejl4vqXATUwAL2Fs6zU0At4IVtX7aPAhAnmrynHNVeOXN4Z+uPrhnCzhmsF9MTsR4Ko+FZmARSmGrE9UM+RPLLXKnTxqaqcQfS+5zDVQrt4CWfioJrMpg7Px4LpMrylg3sWXP6Mu/27PmheOrVm25+TYwl15cmNyMyytNtR5SGbruJuG9t1LPv+BrWoylhHobYM1BwzxQecBCWEWua+wzNIVJAzwBjLTtnvvUrYPZoDd+9/2h1vOHrryB+bdfCo8/GliytJuy4A4fYumnqiKm+oAR4GClX1/j19nDlGNI54ob5kcMcMsdXkMLoFucGUBq4IpYm2KLzo1dvHLykedSz6zZdu3nOqiKXkJH9DZQgo7Lbzj689eVY8fAk08JOJ62qMkDM5fAIzCvIc6QjDBT7mexHx8td/60R+lYlcDQzAAOK2N4S+TSDM9KrJJJK+MFJQ2QXJxQ2fGUu6v/gQfam+aDckW0uUL9lLXd2bL3mw8d+eajvY5PdWmjdMHCAKgIkvpBunGA2IcJ2KXaCBx/vaWTmH0XLT/w8MPhK1Z2E12I0F7XvINf/tr2q24I1i/uJ/WA9ob02BMBXCFAsFfCbarvszZ79c0YutA3YWcpBb6kKYytvRgy8jUs/uDeb2Q3bFSPHy4Ws4XU4ZHHn3jfWLtBb4lfuuL4qme5DwbyqiIqakFQtJ2grFDEQoycqJZWsM/smTpReMOffQDiR8Ujz9TNf/pGuZPYhkMop62rZrTSONweMsXnUsUiI3NqJikd3p/699/sXHDRJkK8FnMXofqq6uNLl49eduOeZVfG6hb5TYCgbV5Dq7Yoyo7V98Za7HEwNPp0zV26Zo/O1kmoNvjvVNUgqQuS6o1V1gCp0uKCOEpN4zWu6fHpBkxAgpkapJp34r2s0SJ3dX5TvYdUeImhl+j6bE07H3qYCwbzx8aOv/Ofux/+TuSCG2IX//2+H77EDWzDGVxay/apSn0GvHf6lx/5+GgcOetx+jfLufwTkUut2FijbVjrksO+ZFXAPYbMwf2HV63p/fR5KHpDRafO0m2pG3R9Yt+iC/a1nDNUNb+PQjYY0GkDvSlcehchrXBFSeuAsSWib/RRNo+uzqdvDBiAfNX36M29+qqg1THoWAR3rpdu6Ca1PkMDLiEheDN8VYviSy7fsuQSDw0uxByibdspV5TUR3QNwKJ7id1b1drfvKSvYcE71sXrl1wx9M3Hme4+lQE/lccFDZJ8xt6HmQ7vzyr30nk5Bd1jhUapXF9Ls5THRInALrNCRmSQc6r8kaMHXnt11533dtmaNtPVm4GvUkZ/VW2gxuHDMHJzDMAlrnp0+kmrh8zzEJefwhBgnFQP0k0D+gXD+oUxfYuPdgAiBKizAbCHo3XnOZftPmel3764ByyV2RUwuYD4wFGILPj0wS9/PXbNTRpzrh00LvToXD36Rm3YdF07sbQTM3Ii16JdX/xu+j/eUg7uz6psEshIAQvdgPrPNbXm/0ruH7MPccZgi/wJD4BoqjS+CG7GREGcEEQuCZB3issLwGvyGa6wZ2/i/Xd2f+/77gsvbzPb2hGEWPzENmJoxZocYx3QFq/R6TFoqXp9LXhLD23y0LY+pDbOIXN9mK4EiDlMzwM+GaKbttk/tdtxnhZXcQ1R8+Jknt9oAwawZ8VV+V++0n/PPWuNVfB6r2UB0IgwZfcSMyDFoHPhtqtvOfaj5zNd3erRMZVjFVXCTQ1ZrNbDDSJy4Szo7n/z+J/IfZbEpx98frrEWysfP5HDFTM5kc1JEsbqphh2KsvlORwqiQGTYnIyGwod+/kr2+/6qmfZReurG9ZZatyGGrfO6iHGIDHG6KpBgz2qx4hgT2U10DHkvQYwFyRECDhJj3Uhxv2JXdu37AqZm8D+BMEiVSzwVzUFdFX7r7xW/vlL4Ttv20CTMKEA9qwlBIjb0MKLdn3x/slfvJoLROSJCRy9o6oJSUhofS+4/hKDl1ltj+L/yYN8/JfOdMezmp2ne8mmp1RjlArkjnNpRLGAhVcYg9Z2D+eyjMgyQjLD5RNiQcD98AWBU8eOKNFQ4re/3vPsE9Hrbw9cdHWfcyFwLvB+AWIOgsmm6rzEHqXqtxgbEKdTJFpt6weuRBxuQ5XXVOM213gstf5Kh8dY20vVgEf1GKsB1Eeqmrdddl3f/GWdhA5bagLNi7yfv333k08f27wpM3ZEq8YG0CUmCiwAc1YqZApSCuc6shKPWsUIub8suZ9OBLQNtyUbx+KlhYnAzihZsDIZhstgJz0v44hDTBnC11obCw7wlLg8bq5Usyl16oh6dFKMxA+/9ruhR77rv/6mrk+e02ZrWG+0rqec3volwbqlbZaW2GduHf/ek9tvuBWIbhep6NPV9FKV3doTH10H+AfYWYfZ1lfV4mu90HPBddEb79l+30OHnv7p0V+9OtHh5XbtRX+kFkHKU9osFqDZhTSfTbEMw2k7iTHKmObYtJT9c8v9jAjylELtGS1FfCmvovnVktxLI+mwggX8kwAfgM2KuJkGu/9zaRzrLjKp7GSKS2oeoZjnVT6vpvMSV+RzqiSpMu4NHf0gu3nD8Rd/uv+fHhr+6jfGVj9/4HtPB+9+ZGK9W80ld72y2tvUFJ53wcAnL4l8+pLguZfELv/Mzpu+sO+OL+274yuHHv1+4uVX822+VHdQ3LGnMDkpselsOqkmEzkmBai3yBZwpQhXKLBygZUYrd0LRxkCDMYaTCyiFVn2/1/fz966WIr3l69SbRQ3jXBONrKWG02mcxTTlSXTdf4IfEqOAQckSlJRwRhvHkkgk5iS01zuw8nk4WMFYGMif3zvvn3B2Ghn74Fe75FgdGx4a/KD0czhD7mJSTaZFOSCWID/XtSuAvyq0jXzTc68/swP8r8U+kkceaL4r3SV8Ey5COdjyh2Xg52o3smKaIVKq7Zw5HYOZ0+JBRlsLuYCJW1/d5ZTc5zKZ1Uxp8oibofCtUMFEDTuNxXzJy7h5DXjTc68/srkXrZCp8u9XPrxceSuvQ7ljvMEMVvJTR98nNmHTgJ8XSLLTCpCooD9sZlMBrNoRTRiwJW1jtzcjJw9X2qvKJdxl6+/VrmfZRzhGX8064OdLHA4Re58We4lG5XREtOo4zmhwPEAirDKkMkkRWx7xOGOGayPANdXat/RHDuvTXwUCxxepZ6W0jVTG3J/GY//ttzPODDgdGJV/vJjy326txNELDFZrLLLTkeb4ZUs2BNOwNYFrdFAEfKFTDYPZDKDHc+MgKt7Wa0UFTEsvIjhZ8q97GP+/Ho91+O/AKGvssyofNkUAAAAAElFTkSuQmCC"/>
+                                    </div>
+                                    <div id="SealPercent"></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!--TextInfoContent end-->
+                    </div>
+                    <!--TextInfoCon end-->
+                </div>
+                <!--TextInfo end-->
+                <div class="Recommend">
+                    <div class="TextTitle" style="width:112px;">推荐服务</div>
+                    <div class="ReportResult_T"></div>
+                    <div class="ReportResult_Con recommend_list">
+                        <a class="recommend_row" href="http://www.paperge.com/check-pay/reduce-pay-task/G202311281617180958" target="_blank">
+                            <div class="recommend_left">
+                                <img class="img1" src="images/recommend_icon1.png"/>
+                            </div>
+                            <p class="recommend_right">自动降重</p>
+                        </a>
+                         <a class="recommend_row" href="http://www.paperge.com/online_check/prepare_check/5-22570a74-a7ae-4827-9961-aeed3b09e1c0" target="_blank">
+                            <div class="recommend_left">
+                                <img class="img2" src="images/recommend_icon2.png"/>
+                            </div>
+                            <p class="recommend_right">在线修改</p>
+                        </a>
+                         <a class="recommend_row" href="http://www.paperge.com/paper-correction/check?taskId=5-22570a74-a7ae-4827-9961-aeed3b09e1c0" target="_blank">
+                            <div class="recommend_left">
+                                <img class="img4" src="images/recommend_icon4.png"/>
+                            </div>
+                            <p class="recommend_right">论文纠错</p>
+                        </a>
+                         <a class="recommend_row" href="https://www.ixueshu.com/" target="_blank">
+                            <div class="recommend_left">
+                                <img class="img5" src="images/recommend_icon5.png"/>
+                            </div>
+                            <p class="recommend_right">找论文</p>
+                        </a>
+                        <a class="recommend_row" href="../../resource/降重秘籍.pdf" target="_blank">
+                            <div class="recommend_left">
+                                <img class="img1" src="images/recommend_icon1.png">
+                            </div>
+                            <p class="recommend_right">降重秘籍</p>
+                        </a>
+                    </div>
+                    <div class="ReportResult_Bot"></div>
+                </div>
+                <div>
+                    <!--<div class="banner_0508"><a href="http://www.paperge.com/reduce_repetition.aspx?reportnum=G202311281617180958" target="_blank"></a></div>-->
+                <a href="http://www.paperge.com/NoLoginPost.aspx?edition=4&v=chec" target="_blank"><div class="banner_0509 banner_0510">
+            <p class="estimate2">恭喜您！只差一次PaperGe <i>至尊版查重</i></p>
+        </div></a>
+                </div>
+                <!--ReportResult-->
+                  <!-- 至尊版还是以前展示的内容，其它版本做调整 -->
+                    <div class="ReportResult Mar">
+                        <div class="TextTitle" style="width:129px;">检测报告结果</div>
+                        <div class="ReportResult_T"></div>
+                        <div class="ReportResult_Con">
+                            <!--ReportResult_Con1-->
+                            <div class="ReportResult_Con1_new">
+                                <ul>
+                                    <li>
+                                        <span class="color-red">总文字复制比：19.2%</span>
+                                    </li>
+                                    <li>
+                                        <span>去除引用文献复制比：</span><span class="color-red">19.2%</span>
+                                    </li>
+                                    <li>
+                                        <span>去除本人已发表文献复制比：</span><span class="color-red"> 19.2%</span>
+                                    </li>
+                                    <li>
+                                        <span>重复字数：</span>1,156
+                                    </li>
+                                    <li>
+                                        <span>总字数：</span>6,027
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--ReportResult_Con1 end-->
+                        </div>
+                        <div class="ReportResult_Bot"></div>
+                    </div>
+                <!--ReportResult end-->
+                <!--DetailReport-->
+                <div class="DetailReport Mar">
+                    <!--tab begin-->
+                    <div class="notice">
+                        <div class="repTabLink_0426">
+                                <ul>
+                                            <li class="curr">简洁报告</li>
+                                            <li><a href="全文对照报告.html" target="_blank">全文对照报告</a></li>
+                                            <li><a href="去除本人已发表文献报告.html" target="_blank">去除本人已发表文献报告</a></li>
+                                            <li><a href="全文标明引文报告.html" target="_blank">全文标明引文报告</a></li>
+                                </ul>
+                        </div>
+                        <div class="tab-bd">
+                            <div class="tab-pal">
+                                <ul>
+                                    <div class="summary">
+                                        <!--summary-->
+                                            <dl>
+                                                <dt>
+                                                    <span class="sumInfo">1.TCPIP协议族：互联网通信的基石_第1部分</span>
+                                                    <span class="sumTotal">总字数：5,746</span>
+                                                </dt>
+                                                <dd>文字复制比：20.1
+                                                    %（1,156）
+                                                </dd>
+                                            </dl>
+                                                <div class="simply_table">
+                                                    <table bordercolor="#fff" cellspacing="0" cellpadding="0"
+                                                           class="simp_table">
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">1</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://xueshu.baidu.com/s?wd=ACADEMIC"
+                                                                               target="_blank">ACADEMIC</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">1.3%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">2</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://www.doc88.com/p%2D9068254335180.html"
+                                                                               target="_blank">网页设计与制作 (全套课件上册) - 道客巴巴</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">1.3%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">3</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://xueshu.baidu.com/s?wd=EMCNetWo"
+                                                                               target="_blank">EMCNetWo</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">1.2%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">4</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://www.doc88.com/p%2D37387002698259.html"
+                                                                               target="_blank">Webmail报文监测与重组技术的研究. - 道客巴巴</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">1.2%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">5</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://cloud.tencent.com/developer/news/379100"
+                                                                               target="_blank">DRF 框架总结-引入 Django REST framework 框架 - 云+社区 - 腾讯云</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">1.1%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">6</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://www.docin.com/p%2D2490052895.html"
+                                                                               target="_blank">局域网IP冲突分析与解决方法研究</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">1.1%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">7</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://blog.csdn.net/Linux_zhicheng/article/details/104950537"
+                                                                               target="_blank">Linux下Ubuntu的网络环境配置_Linux_zhicheng的博客-CSDN博客</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">1.1%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">8</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://blog.csdn.net/weixin_34367845/article/details/88663248#commentBox"
+                                                                               target="_blank">移动通信技术基础知识</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">1%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">9</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://blog.csdn.net/u014600626/article/details/107790977#insertcode"
+                                                                               target="_blank">HTTP报文的结构_gcs的博客-CSDN博客</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">1%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">10</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://www.xjishu.com/zhuanli/62/200810000527.html"
+                                                                               target="_blank">一种实现usb设备共享使用的方法及系统的制作方法</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">1%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">11</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://xueshu.baidu.com/s?wd=Webmail还"
+                                                                               target="_blank">Webmail还</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.9%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">12</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://www.chanpin100.com/article/107493"
+                                                                               target="_blank">从互联网到区块链，再到互联链 | 产品壹佰</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.9%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">13</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://xueshu.baidu.com/s?wd=HUAWEINe"
+                                                                               target="_blank">HUAWEINe</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.8%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">14</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://www.xjishu.com/zhuanli/down/7724558.html"
+                                                                               target="_blank">在vlan内精确转发ip组播数据的方法和转发设备的制作方法_X技术</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.8%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">15</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://www.docin.com/p%2D1998126250.html"
+                                                                               target="_blank">第四章 网络层协议的测试分析及NAT</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.7%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">16</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://cache.baiducontent.com/c?m=9d78d513d99556ae28fa94081a17a7384208d9777b978e1a2592d50a8465285c5a23a6fe302267528e94766d16af3e0db7af2b30200356b299cb8240d6be912b2f8c273e671cf11b548c47&p=9060c016d9c11cb508e2947f5f08&newp=8b2a970e86cc41ae17f587625f0092695803ed6239d7c44324b9d71fd325001c1b69e7b121261205d2c6786d03a54e5eeaf633763c1766dada9fca458ae7c463&s=cfcd208495d565ef&user=baidu&fm=sc&query=dashuju+site%3Adoc88%2Ecom&qid=cb8178880014014e&p1=9"
+                                                                               target="_blank">d-link系统,inc 无线路由器帮助文档 - 道客巴巴</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.7%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">17</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://www.doc88.com/p-3344786886868.html"
+                                                                               target="_blank">【精品】传输层1 - 道客巴巴</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.7%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">18</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://www.acao.cn/technology/netsafe/642.html"
+                                                                               target="_blank">到过渡的这些知识点你一定得知道自由阿草</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.7%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">19</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://blog.csdn.net/jinjiniao1/article/month/2019/07"
+                                                                               target="_blank">2019年07月_Lzc的博客_lzcWHUT_CSDN博客</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.7%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">20</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://blog.csdn.net/qq_27602093/article/details/51068442"
+                                                                               target="_blank">TCP协议详解</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.7%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">21</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://blog.csdn.net/weixin_45568391/article/details/106630539"
+                                                                               target="_blank">消息头的协商</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.7%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">22</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://news.cntv.cn/20120115/104140.shtml"
+                                                                               target="_blank">迎新聚餐更重情(图)_新闻台_中国网络电视台</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.7%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">23</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://www.doc88.com/p%2D2995954301565.html"
+                                                                               target="_blank">计算机网络技术（第六版）第4章  TCPIP协议</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.6%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">24</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://www.doc88.com/p-5844817856786.html"
+                                                                               target="_blank">网络管理第六章</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.6%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">25</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://www.docin.com/p%2D161495250.html"
+                                                                               target="_blank">【硕士论文】基于代理（Agent）的实时分布式网络入侵检测系统的设计与实现</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.6%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">26</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://www.docin.com/p%2D2445393595.html"
+                                                                               target="_blank">最新数据通信与网络课程设计09</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.6%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">27</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="http://wenku.baidu.com/view/83427a6527d3240c8447ef3d.html"
+                                                                               target="_blank">SmartClass Ethernet测试仪 用户手册</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.6%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">28</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://blog.csdn.net/u011652364/article/details/103556292#csdnc-triangledown"
+                                                                               target="_blank">基于web的网络管理系统</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                             -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.5%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!--内容1-->
+                                                            <tr>
+                                                                <td class="org_number">
+                                                                    <span class="listNu">29</span>
+                                                                </td>
+                                                                <td class="org_content">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="https://blog.csdn.net/dl674756321/article/details/103181527"
+                                                                               target="_blank">【计算机网络7】四. 传输层 (TCP/UDP)_dl674756321的博客-CSDN博客_dl层</a>
+                                                                        </li>
+                                                                        <li class="decoration">
+                                                                            csdn -
+                                                                            《网页
+                                                                            》- 
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td class="org_line"></td>
+                                                                <td class="quote">
+                                                                    <ul class="quote_num">
+                                                                        <li class="shuzi">0.5%</li>
+                                                                        <li class="fenge_line"></li>
+                                                                        <li class="if_f">
+                                                                            是否引证：否
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="message_line">
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                        <!--内容1 end-->
+                                                    </table>
+                                                </div>
+                                            <!--summary end-->
+                                            <dl>
+                                                <dt>
+                                                    <span class="sumInfo">2.TCPIP协议族：互联网通信的基石_第2部分</span>
+                                                    <span class="sumTotal">总字数：281</span>
+                                                </dt>
+                                                <dd>文字复制比：0
+                                                    %（0）
+                                                </dd>
+                                            </dl>
+                                            <!--summary end-->
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--tab end-->
+                </div>
+                <!--DetailReport end-->
+            </div>
+            <div class="wrapper_con_Bottom"></div>
+        </div>
+        <!--wrapper_con end-->
+    </div>
+    <!--wrapper_topbg end-->
+    <div class="copyright">版权所有 <a href="http://www.paperge.com" target="_blank">paperge.com</a></div>
+</div>
+<!--wrapper end-->
+</body>
+</html>

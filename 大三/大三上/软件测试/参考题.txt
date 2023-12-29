@@ -1,0 +1,51 @@
+public class Triangle {
+	protected long lborderA = 0; 
+	protected long lborderB = 0; 
+	protected long lborderC = 0; 
+	public Triangle(long lborderA, long lborderB, long lborderC) 
+	{ 
+		this.lborderA = lborderA; 
+		this.lborderB = lborderB; 
+		this.lborderC = lborderC; 
+	} 
+	public boolean isTriangle() 
+	{ 
+		boolean isTrue = false; 
+if((lborderA>0 && lborderA<200) 
+&&(lborderB>0 && lborderB<200) 
+&&(lborderC>0 && lborderC<200)) 
+		{ 
+			if((lborderA < (lborderB + lborderC)) 
+			&&(lborderB < (lborderA + lborderC)) 
+			&&(lborderC < (lborderA + lborderB))) 
+				isTrue = true; 
+		} 
+		return isTrue; 
+	} 
+public String isType() 
+
+
+测试代码：
+	import junit.framework.TestCase;
+public class exampletest extends____1______{
+	private ______2_____ triangle;
+	protected void setUp() throws Exception {
+		super.setUp();
+		triangle=new Triangle(12,12,13);
+	}
+	public void testIsTriangle() { 
+		____3_____(triangle.__ ___4_____); 
+	} 
+	public void testIsType() 
+	{ 
+		assertEquals(triangle.isType(),_____5____); 
+	} 
+}
+
+答案：
+1. TestCase
+2. Triangle
+3. assertTrue
+4. isTriangle()
+5. “等腰三角形”
+
