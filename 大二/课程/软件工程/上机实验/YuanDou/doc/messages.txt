@@ -1,0 +1,53 @@
+格式：类型 + 动作
+
+类型： 系统 System
+	  客户端 Client
+	  玩家 A, B, C
+	  消息 Message
+
+客户端发送的信息
+Client:Get Tables 得到桌子的列表
+Client:Join Table <第几个桌> 加入牌桌
+Client:Create Table 新建牌桌
+Client:Info:<Name>,<Stone> 传递用户信息
+Client:Exit 退出牌桌
+
+服务端发送的信息
+System:Tables{{<人数>,<是否开始>}}
+System:Player:A/B/C 给予用户代号
+System:QQW:A/B/C 谁是地主
+System:QQWCard:H1,S2,S3 地主牌
+System:Give:A/B/C:H1,S2 系统给予用户牌
+System:Begin  全部人准备之后系统通知进入牌桌
+System:Come:{{User1,999,true,OB}{dog,1000,false,OB}{jgl,1000,false,OB}} 有人进入牌桌，更新waitPane
+System:Round:A/B/C 发送出牌请求
+
+客户端同步信息
+A/B/C:Ready 准备
+A/B/C:Unready 取消准备
+A/B/C:Info{123,JB} 客户端发送信息
+A/B/C:Lay{H1,S2} 用户出牌H1和S2
+A/B/C:Skip 用户跳过
+A/B/C:Done 用户打完了牌
+
+消息同步
+Message:Player:Pre:1 预设消息
+Message:Player:Otr:1 其他消息
+
+
+
+System:QQW:A
+
+System:QQWCard:H15,S8,P9
+
+System:Give:A:F3,H9,H9,S15,J17,J16,S6,S7
+
+System:Give:B:S3,P4,F4,P5,F6,H6,P6,S6,H7,F7,F8,S8,F9,P9,H10,S10,F12,F13,P14,H15
+
+System:Give:C:H3,H4,H5,S5,S9,H9,F10,P11,S11,S13,P13,H13,F14,H14,F15,P15,J16
+
+System:Come:{{User1,999,true,OB}{dog,1000,false,OB}{jgl,1000,false,OB}}
+
+System:Round:
+
+java -jar -Dfile.encoding=utf-8 YuanDou.jar

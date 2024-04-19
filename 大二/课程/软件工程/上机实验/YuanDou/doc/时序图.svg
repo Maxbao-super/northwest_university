@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" width="304px" height="860px" viewBox="0, 0, 304, 860" preserveAspectRatio="none" contentStyleType="text/css" zoomAndPan="magnify" style="background:#FFFFFF;">
+  <defs />
+  <g>
+    <text x="114.9063" y="29.5332" textLength="72.1875" lengthAdjust="spacing" font-family="sans-serif" font-size="14" font-weight="bold" style="fill:black;">程序时序图</text>
+    <line x1="33" y1="121.2188" x2="33" y2="778.6016" stroke-width="0.5" stroke-dasharray="5 5" style="stroke:#181818;" />
+    <line x1="100" y1="121.2188" x2="100" y2="778.6016" stroke-width="0.5" stroke-dasharray="5 5" style="stroke:#181818;" />
+    <line x1="168" y1="121.2188" x2="168" y2="778.6016" stroke-width="0.5" stroke-dasharray="5 5" style="stroke:#181818;" />
+    <line x1="270" y1="121.2188" x2="270" y2="778.6016" stroke-width="0.5" stroke-dasharray="5 5" style="stroke:#181818;" />
+    <text x="5" y="118.1426" textLength="51" lengthAdjust="spacing" font-family="sans-serif" font-size="14" style="fill:black;">客户端A</text>
+    <ellipse cx="33.5" cy="52.1094" rx="8" ry="8" stroke-width="0.5" style="fill:#E2E2F0;stroke:#181818;" />
+    <path d="M33.5 60.1094 L33.5 87.1094 M20.5 68.1094 L46.5 68.1094 M33.5 87.1094 L20.5 102.1094 M33.5 87.1094 L46.5 102.1094" stroke-width="0.5" style="fill:none;stroke:#181818;" />
+    <text x="5" y="792.1348" textLength="51" lengthAdjust="spacing" font-family="sans-serif" font-size="14" style="fill:black;">客户端A</text>
+    <ellipse cx="33.5" cy="803.7109" rx="8" ry="8" stroke-width="0.5" style="fill:#E2E2F0;stroke:#181818;" />
+    <path d="M33.5 811.7109 L33.5 838.7109 M20.5 819.7109 L46.5 819.7109 M33.5 838.7109 L20.5 853.7109 M33.5 838.7109 L46.5 853.7109" stroke-width="0.5" style="fill:none;stroke:#181818;" />
+    <text x="72" y="118.1426" textLength="51" lengthAdjust="spacing" font-family="sans-serif" font-size="14" style="fill:black;">客户端B</text>
+    <ellipse cx="100.5" cy="52.1094" rx="8" ry="8" stroke-width="0.5" style="fill:#E2E2F0;stroke:#181818;" />
+    <path d="M100.5 60.1094 L100.5 87.1094 M87.5 68.1094 L113.5 68.1094 M100.5 87.1094 L87.5 102.1094 M100.5 87.1094 L113.5 102.1094" stroke-width="0.5" style="fill:none;stroke:#181818;" />
+    <text x="72" y="792.1348" textLength="51" lengthAdjust="spacing" font-family="sans-serif" font-size="14" style="fill:black;">客户端B</text>
+    <ellipse cx="100.5" cy="803.7109" rx="8" ry="8" stroke-width="0.5" style="fill:#E2E2F0;stroke:#181818;" />
+    <path d="M100.5 811.7109 L100.5 838.7109 M87.5 819.7109 L113.5 819.7109 M100.5 838.7109 L87.5 853.7109 M100.5 838.7109 L113.5 853.7109" stroke-width="0.5" style="fill:none;stroke:#181818;" />
+    <text x="139" y="118.1426" textLength="52" lengthAdjust="spacing" font-family="sans-serif" font-size="14" style="fill:black;">客户端C</text>
+    <ellipse cx="168" cy="52.1094" rx="8" ry="8" stroke-width="0.5" style="fill:#E2E2F0;stroke:#181818;" />
+    <path d="M168 60.1094 L168 87.1094 M155 68.1094 L181 68.1094 M168 87.1094 L155 102.1094 M168 87.1094 L181 102.1094" stroke-width="0.5" style="fill:none;stroke:#181818;" />
+    <text x="139" y="792.1348" textLength="52" lengthAdjust="spacing" font-family="sans-serif" font-size="14" style="fill:black;">客户端C</text>
+    <ellipse cx="168" cy="803.7109" rx="8" ry="8" stroke-width="0.5" style="fill:#E2E2F0;stroke:#181818;" />
+    <path d="M168 811.7109 L168 838.7109 M155 819.7109 L181 819.7109 M168 838.7109 L155 853.7109 M168 838.7109 L181 853.7109" stroke-width="0.5" style="fill:none;stroke:#181818;" />
+    <rect x="242" y="88.6094" width="56" height="31.6094" rx="2.5" ry="2.5" stroke-width="0.5" style="fill:#E2E2F0;stroke:#181818;" />
+    <text x="249" y="110.1426" textLength="42" lengthAdjust="spacing" font-family="sans-serif" font-size="14" style="fill:black;">服务端</text>
+    <rect x="242" y="777.6016" width="56" height="31.6094" rx="2.5" ry="2.5" stroke-width="0.5" style="fill:#E2E2F0;stroke:#181818;" />
+    <text x="249" y="799.1348" textLength="42" lengthAdjust="spacing" font-family="sans-serif" font-size="14" style="fill:black;">服务端</text>
+    <polygon points="258,149.5703 268,153.5703 258,157.5703 262,153.5703" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="33.5" y1="153.5703" x2="264" y2="153.5703" stroke-width="1" style="stroke:#181818;" />
+    <text x="40.5" y="148.7139" textLength="26" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">准备</text>
+    <polygon points="258,179.9219 268,183.9219 258,187.9219 262,183.9219" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="100.5" y1="183.9219" x2="264" y2="183.9219" stroke-width="1" style="stroke:#181818;" />
+    <text x="107.5" y="179.0654" textLength="26" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">准备</text>
+    <polygon points="258,210.2734 268,214.2734 258,218.2734 262,214.2734" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="168" y1="214.2734" x2="264" y2="214.2734" stroke-width="1" style="stroke:#181818;" />
+    <text x="175" y="209.417" textLength="26" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">准备</text>
+    <polygon points="44.5,240.625 34.5,244.625 44.5,248.625 40.5,244.625" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="38.5" y1="244.625" x2="269" y2="244.625" stroke-width="1" style="stroke:#181818;" />
+    <text x="50.5" y="239.7686" textLength="26" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">发牌</text>
+    <polygon points="111.5,270.9766 101.5,274.9766 111.5,278.9766 107.5,274.9766" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="105.5" y1="274.9766" x2="269" y2="274.9766" stroke-width="1" style="stroke:#181818;" />
+    <text x="117.5" y="270.1201" textLength="26" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">发牌</text>
+    <polygon points="179,301.3281 169,305.3281 179,309.3281 175,305.3281" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="173" y1="305.3281" x2="269" y2="305.3281" stroke-width="1" style="stroke:#181818;" />
+    <text x="185" y="300.4717" textLength="26" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">发牌</text>
+    <polygon points="44.5,331.6797 34.5,335.6797 44.5,339.6797 40.5,335.6797" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="38.5" y1="335.6797" x2="269" y2="335.6797" stroke-width="1" style="stroke:#181818;" />
+    <text x="50.5" y="330.8232" textLength="143" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">确定地主（服务器分配）</text>
+    <polygon points="44.5,362.0313 34.5,366.0313 44.5,370.0313 40.5,366.0313" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="38.5" y1="366.0313" x2="269" y2="366.0313" stroke-width="1" style="stroke:#181818;" />
+    <text x="50.5" y="361.1748" textLength="52" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">更新手牌</text>
+    <polygon points="44.5,392.3828 34.5,396.3828 44.5,400.3828 40.5,396.3828" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="38.5" y1="396.3828" x2="269" y2="396.3828" stroke-width="1" style="stroke:#181818;" />
+    <text x="50.5" y="391.5264" textLength="52" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">请求出牌</text>
+    <polygon points="258,422.7344 268,426.7344 258,430.7344 262,426.7344" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="33.5" y1="426.7344" x2="264" y2="426.7344" stroke-width="1" style="stroke:#181818;" />
+    <text x="40.5" y="421.8779" textLength="26" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">出牌</text>
+    <polygon points="44.5,453.0859 34.5,457.0859 44.5,461.0859 40.5,457.0859" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="38.5" y1="457.0859" x2="269" y2="457.0859" stroke-width="1" style="stroke:#181818;" />
+    <text x="50.5" y="452.2295" textLength="78" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">判断出牌结果</text>
+    <polygon points="111.5,483.4375 101.5,487.4375 111.5,491.4375 107.5,487.4375" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="105.5" y1="487.4375" x2="269" y2="487.4375" stroke-width="1" style="stroke:#181818;" />
+    <text x="117.5" y="482.5811" textLength="52" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">请求出牌</text>
+    <polygon points="258,513.7891 268,517.7891 258,521.7891 262,517.7891" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="100.5" y1="517.7891" x2="264" y2="517.7891" stroke-width="1" style="stroke:#181818;" />
+    <text x="107.5" y="512.9326" textLength="26" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">出牌</text>
+    <polygon points="111.5,544.1406 101.5,548.1406 111.5,552.1406 107.5,548.1406" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="105.5" y1="548.1406" x2="269" y2="548.1406" stroke-width="1" style="stroke:#181818;" />
+    <text x="117.5" y="543.2842" textLength="78" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">判断出牌结果</text>
+    <polygon points="179,574.4922 169,578.4922 179,582.4922 175,578.4922" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="173" y1="578.4922" x2="269" y2="578.4922" stroke-width="1" style="stroke:#181818;" />
+    <text x="185" y="573.6357" textLength="52" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">请求出牌</text>
+    <polygon points="258,604.8438 268,608.8438 258,612.8438 262,608.8438" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="168" y1="608.8438" x2="264" y2="608.8438" stroke-width="1" style="stroke:#181818;" />
+    <text x="175" y="603.9873" textLength="26" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">出牌</text>
+    <polygon points="179,635.1953 169,639.1953 179,643.1953 175,639.1953" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="173" y1="639.1953" x2="269" y2="639.1953" stroke-width="1" style="stroke:#181818;" />
+    <text x="185" y="634.3389" textLength="78" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">判断出牌结果</text>
+    <polygon points="258,665.5469 268,669.5469 258,673.5469 262,669.5469" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="33.5" y1="669.5469" x2="264" y2="669.5469" stroke-width="1" style="stroke:#181818;" />
+    <text x="40.5" y="664.6904" textLength="52" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">手牌为空</text>
+    <polygon points="44.5,695.8984 34.5,699.8984 44.5,703.8984 40.5,699.8984" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="38.5" y1="699.8984" x2="269" y2="699.8984" stroke-width="1" style="stroke:#181818;" />
+    <text x="50.5" y="695.042" textLength="52" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">结束游戏</text>
+    <polygon points="111.5,726.25 101.5,730.25 111.5,734.25 107.5,730.25" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="105.5" y1="730.25" x2="269" y2="730.25" stroke-width="1" style="stroke:#181818;" />
+    <text x="117.5" y="725.3936" textLength="52" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">结束游戏</text>
+    <polygon points="179,756.6016 169,760.6016 179,764.6016 175,760.6016" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="173" y1="760.6016" x2="269" y2="760.6016" stroke-width="1" style="stroke:#181818;" />
+    <text x="185" y="755.7451" textLength="52" lengthAdjust="spacing" font-family="sans-serif" font-size="13" style="fill:black;">结束游戏</text>
+  </g>
+  <title>时序图</title>
+  <metadata>
+    <RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:puv="https://github.com/Fruchtzwerg94/PlantUmlViewer" xmlns="rdf">
+      <puv:product>PlantUML Viewer by Philipp Schmidt</puv:product>
+      <puv:version>1.5.0.9</puv:version>
+      <puv:plantuml>1.2023.0</puv:plantuml>
+      <rdf:Description>
+        <dc:creator>S-FLOWX13\suxto</dc:creator>
+        <dc:date>2023-06-22T18:27:49.2733648Z</dc:date>
+        <dc:source>时序图.puml</dc:source>
+        <dc:title>时序图</dc:title>
+        <dc:format>image/svg</dc:format>
+        <puv:page>1</puv:page>
+        <puv:diagram>1</puv:diagram>
+      </rdf:Description>
+    </RDF>
+  </metadata>
+  <desc>@startuml 程序时序图
+title 程序时序图
+
+actor 客户端A
+actor 客户端B
+actor 客户端C
+participant 服务端
+
+客户端A -&gt; 服务端: 准备
+客户端B -&gt; 服务端: 准备
+客户端C -&gt; 服务端: 准备
+服务端 -&gt; 客户端A: 发牌
+服务端 -&gt; 客户端B: 发牌
+服务端 -&gt; 客户端C: 发牌
+服务端 -&gt; 客户端A: 确定地主（服务器分配）
+服务端 -&gt; 客户端A: 更新手牌
+
+客户端A &lt;- 服务端: 请求出牌
+客户端A -&gt; 服务端: 出牌
+服务端 -&gt; 客户端A: 判断出牌结果
+客户端B &lt;- 服务端: 请求出牌
+客户端B -&gt; 服务端: 出牌
+服务端 -&gt; 客户端B: 判断出牌结果
+客户端C &lt;- 服务端: 请求出牌
+客户端C -&gt; 服务端: 出牌
+服务端 -&gt; 客户端C: 判断出牌结果
+客户端A -&gt; 服务端: 手牌为空
+服务端 -&gt; 客户端A: 结束游戏
+服务端 -&gt; 客户端B: 结束游戏
+服务端 -&gt; 客户端C: 结束游戏
+@enduml
+</desc>
+</svg>

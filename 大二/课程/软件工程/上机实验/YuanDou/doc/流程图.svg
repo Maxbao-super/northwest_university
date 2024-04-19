@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" width="830px" height="960px" viewBox="0, 0, 830, 960" preserveAspectRatio="none" contentStyleType="text/css" zoomAndPan="magnify" style="background:#FFFFFF;">
+  <defs />
+  <g>
+    <text x="341.5625" y="34.5332" textLength="144.375" lengthAdjust="spacing" font-family="sans-serif" font-size="14" font-weight="bold" style="fill:black;">斗地主程序用户流程图</text>
+    <rect x="15" y="51.0645" width="797.5" height="22.6406" stroke-width="1" style="fill:none;stroke:none;" />
+    <ellipse cx="490.0625" cy="88.7051" rx="10" ry="10" stroke-width="1" style="fill:#222222;stroke:#222222;" />
+    <rect x="456.0625" y="118.7051" width="68" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="466.0625" y="141.1621" textLength="48" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">玩家登录</text>
+    <rect x="444.0625" y="173.7988" width="92" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="454.0625" y="196.2559" textLength="72" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">进入游戏大厅</text>
+    <polygon points="457.0625,228.8926 523.0625,228.8926 535.0625,240.8926 523.0625,252.8926 457.0625,252.8926 445.0625,240.8926 457.0625,228.8926" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="457.0625" y="245.3936" textLength="66" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">选择加入游戏</text>
+    <text x="434.0625" y="238.4756" textLength="11" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">是</text>
+    <text x="535.0625" y="238.4756" textLength="11" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">否</text>
+    <rect x="195.125" y="262.8926" width="92" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="205.125" y="285.3496" textLength="72" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">加入游戏房间</text>
+    <polygon points="208.125,317.9863 274.125,317.9863 286.125,329.9863 274.125,341.9863 208.125,341.9863 196.125,329.9863 208.125,317.9863" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="208.125" y="334.4873" textLength="66" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">等待游戏开始</text>
+    <text x="185.125" y="327.5693" textLength="11" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">是</text>
+    <text x="286.125" y="327.5693" textLength="11" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">否</text>
+    <rect x="21" y="351.9863" width="116" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="31" y="374.4434" textLength="96" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">等待其他玩家加入</text>
+    <rect x="409.25" y="351.9863" width="68" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="419.25" y="374.4434" textLength="48" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">开始游戏</text>
+    <polygon points="410.25,451.0801 476.25,451.0801 488.25,463.0801 476.25,475.0801 410.25,475.0801 398.25,463.0801 410.25,451.0801" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="410.25" y="467.5811" textLength="66" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">轮到玩家出牌</text>
+    <text x="387.25" y="460.6631" textLength="11" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">是</text>
+    <text x="488.25" y="460.6631" textLength="11" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">否</text>
+    <rect x="293.5" y="485.0801" width="68" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="303.5" y="507.5371" textLength="48" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">玩家出牌</text>
+    <polygon points="305.5,540.1738 349.5,540.1738 361.5,552.1738 349.5,564.1738 305.5,564.1738 293.5,552.1738 305.5,540.1738" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="305.5" y="556.6748" textLength="44" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">牌型合法</text>
+    <text x="282.5" y="549.7568" textLength="11" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">是</text>
+    <text x="361.5" y="549.7568" textLength="11" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">否</text>
+    <rect x="202" y="574.1738" width="68" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="212" y="596.6309" textLength="48" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">出牌生效</text>
+    <polygon points="203,643.8145 269,643.8145 281,655.8145 269,667.8145 203,667.8145 191,655.8145 203,643.8145" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="203" y="660.3154" textLength="66" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">玩家手牌为空</text>
+    <text x="180" y="653.3975" textLength="11" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">是</text>
+    <text x="281" y="653.3975" textLength="11" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">否</text>
+    <rect x="147" y="677.8145" width="68" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="157" y="700.2715" textLength="48" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">游戏结束</text>
+    <rect x="245" y="677.8145" width="92" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="255" y="700.2715" textLength="72" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">进入下一回合</text>
+    <polygon points="236,718.9082 248,730.9082 236,742.9082 224,730.9082 236,718.9082" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <rect x="367" y="574.1738" width="104" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="377" y="596.6309" textLength="84" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">提示牌型不合法</text>
+    <rect x="373" y="643.8145" width="92" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="383" y="666.2715" textLength="72" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">重新选择出牌</text>
+    <polygon points="327.5,748.9082 339.5,760.9082 327.5,772.9082 315.5,760.9082 327.5,748.9082" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <rect x="501" y="485.0801" width="116" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="511" y="507.5371" textLength="96" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">等待其他玩家出牌</text>
+    <polygon points="443.25,778.9082 455.25,790.9082 443.25,802.9082 431.25,790.9082 443.25,778.9082" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <polygon points="443.25,407.0801 455.25,419.0801 443.25,431.0801 431.25,419.0801 443.25,407.0801" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <polygon points="415.75,822.9082 470.75,822.9082 482.75,834.9082 470.75,846.9082 415.75,846.9082 403.75,834.9082 415.75,822.9082" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="415.75" y="839.4092" textLength="55" lengthAdjust="spacing" font-family="sans-serif" font-size="11" style="fill:black;">游戏未结束</text>
+    <polygon points="241.125,852.9082 253.125,864.9082 241.125,876.9082 229.125,864.9082 241.125,852.9082" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <rect x="645" y="262.8926" width="116" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="655" y="285.3496" textLength="96" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">创建新的游戏房间</text>
+    <rect x="645" y="317.9863" width="116" height="35.0938" rx="12.5" ry="12.5" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <text x="655" y="340.4434" textLength="96" lengthAdjust="spacing" font-family="sans-serif" font-size="12" style="fill:black;">等待其他玩家加入</text>
+    <polygon points="490.0625,882.9082 502.0625,894.9082 490.0625,906.9082 478.0625,894.9082 490.0625,882.9082" stroke-width="0.5" style="fill:#F1F1F1;stroke:#181818;" />
+    <line x1="15" y1="51.0645" x2="15" y2="948.9082" stroke-width="1.5" style="stroke:black;" />
+    <ellipse cx="788.5" cy="937.9082" rx="11" ry="11" stroke-width="1" style="fill:none;stroke:#222222;" />
+    <ellipse cx="788.5" cy="937.9082" rx="6" ry="6" stroke-width="1" style="fill:#222222;stroke:#111111;" />
+    <line x1="765" y1="51.0645" x2="765" y2="948.9082" stroke-width="1.5" style="stroke:black;" />
+    <line x1="811" y1="51.0645" x2="811" y2="948.9082" stroke-width="1.5" style="stroke:black;" />
+    <line x1="490.0625" y1="98.7051" x2="490.0625" y2="118.7051" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="486.0625,108.7051 490.0625,118.7051 494.0625,108.7051 490.0625,112.7051" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="490.0625" y1="153.7988" x2="490.0625" y2="173.7988" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="486.0625,163.7988 490.0625,173.7988 494.0625,163.7988 490.0625,167.7988" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="191" y1="655.8145" x2="181" y2="655.8145" stroke-width="1" style="stroke:#181818;" />
+    <line x1="181" y1="655.8145" x2="181" y2="677.8145" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="177,667.8145 181,677.8145 185,667.8145 181,671.8145" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="281" y1="655.8145" x2="291" y2="655.8145" stroke-width="1" style="stroke:#181818;" />
+    <line x1="291" y1="655.8145" x2="291" y2="677.8145" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="287,667.8145 291,677.8145 295,667.8145 291,671.8145" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="181" y1="712.9082" x2="181" y2="730.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="181" y1="730.9082" x2="224" y2="730.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="214,726.9082 224,730.9082 214,734.9082 218,730.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="291" y1="712.9082" x2="291" y2="730.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="291" y1="730.9082" x2="248" y2="730.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="258,726.9082 248,730.9082 258,734.9082 254,730.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="236" y1="609.2676" x2="236" y2="643.8145" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="232,633.8145 236,643.8145 240,633.8145 236,637.8145" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="419" y1="609.2676" x2="419" y2="643.8145" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="415,633.8145 419,643.8145 423,633.8145 419,637.8145" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="293.5" y1="552.1738" x2="236" y2="552.1738" stroke-width="1" style="stroke:#181818;" />
+    <line x1="236" y1="552.1738" x2="236" y2="574.1738" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="232,564.1738 236,574.1738 240,564.1738 236,568.1738" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="361.5" y1="552.1738" x2="419" y2="552.1738" stroke-width="1" style="stroke:#181818;" />
+    <line x1="419" y1="552.1738" x2="419" y2="574.1738" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="415,564.1738 419,574.1738 423,564.1738 419,568.1738" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="236" y1="742.9082" x2="236" y2="760.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="236" y1="760.9082" x2="315.5" y2="760.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="305.5,756.9082 315.5,760.9082 305.5,764.9082 309.5,760.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="419" y1="678.9082" x2="419" y2="760.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="419" y1="760.9082" x2="339.5" y2="760.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="349.5,756.9082 339.5,760.9082 349.5,764.9082 345.5,760.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="327.5" y1="520.1738" x2="327.5" y2="540.1738" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="323.5,530.1738 327.5,540.1738 331.5,530.1738 327.5,534.1738" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="398.25" y1="463.0801" x2="327.5" y2="463.0801" stroke-width="1" style="stroke:#181818;" />
+    <line x1="327.5" y1="463.0801" x2="327.5" y2="485.0801" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="323.5,475.0801 327.5,485.0801 331.5,475.0801 327.5,479.0801" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="488.25" y1="463.0801" x2="559" y2="463.0801" stroke-width="1" style="stroke:#181818;" />
+    <line x1="559" y1="463.0801" x2="559" y2="485.0801" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="555,475.0801 559,485.0801 563,475.0801 559,479.0801" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="327.5" y1="772.9082" x2="327.5" y2="790.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="327.5" y1="790.9082" x2="431.25" y2="790.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="421.25,786.9082 431.25,790.9082 421.25,794.9082 425.25,790.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="559" y1="520.1738" x2="559" y2="790.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="559" y1="790.9082" x2="455.25" y2="790.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="465.25,786.9082 455.25,790.9082 465.25,794.9082 461.25,790.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="443.25" y1="431.0801" x2="443.25" y2="451.0801" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="439.25,441.0801 443.25,451.0801 447.25,441.0801 443.25,445.0801" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="482.75" y1="834.9082" x2="631" y2="834.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="627,629.2676 631,619.2676 635,629.2676 631,625.2676" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="631" y1="419.0801" x2="631" y2="834.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="631" y1="419.0801" x2="455.25" y2="419.0801" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="465.25,415.0801 455.25,419.0801 465.25,423.0801 461.25,419.0801" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="443.25" y1="802.9082" x2="443.25" y2="822.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="439.25,812.9082 443.25,822.9082 447.25,812.9082 443.25,816.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="443.25" y1="387.0801" x2="443.25" y2="407.0801" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="439.25,397.0801 443.25,407.0801 447.25,397.0801 443.25,401.0801" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="196.125" y1="329.9863" x2="79" y2="329.9863" stroke-width="1" style="stroke:#181818;" />
+    <line x1="79" y1="329.9863" x2="79" y2="351.9863" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="75,341.9863 79,351.9863 83,341.9863 79,345.9863" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="286.125" y1="329.9863" x2="443.25" y2="329.9863" stroke-width="1" style="stroke:#181818;" />
+    <line x1="443.25" y1="329.9863" x2="443.25" y2="351.9863" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="439.25,341.9863 443.25,351.9863 447.25,341.9863 443.25,345.9863" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="79" y1="387.0801" x2="79" y2="864.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="79" y1="864.9082" x2="229.125" y2="864.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="219.125,860.9082 229.125,864.9082 219.125,868.9082 223.125,864.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="443.25" y1="846.9082" x2="443.25" y2="864.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="443.25" y1="864.9082" x2="253.125" y2="864.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="263.125,860.9082 253.125,864.9082 263.125,868.9082 259.125,864.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="241.125" y1="297.9863" x2="241.125" y2="317.9863" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="237.125,307.9863 241.125,317.9863 245.125,307.9863 241.125,311.9863" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="703" y1="297.9863" x2="703" y2="317.9863" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="699,307.9863 703,317.9863 707,307.9863 703,311.9863" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="445.0625" y1="240.8926" x2="241.125" y2="240.8926" stroke-width="1" style="stroke:#181818;" />
+    <line x1="241.125" y1="240.8926" x2="241.125" y2="262.8926" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="237.125,252.8926 241.125,262.8926 245.125,252.8926 241.125,256.8926" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="535.0625" y1="240.8926" x2="703" y2="240.8926" stroke-width="1" style="stroke:#181818;" />
+    <line x1="703" y1="240.8926" x2="703" y2="262.8926" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="699,252.8926 703,262.8926 707,252.8926 703,256.8926" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="241.125" y1="876.9082" x2="241.125" y2="894.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="241.125" y1="894.9082" x2="478.0625" y2="894.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="468.0625,890.9082 478.0625,894.9082 468.0625,898.9082 472.0625,894.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="703" y1="353.0801" x2="703" y2="894.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="703" y1="894.9082" x2="502.0625" y2="894.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="512.0625,890.9082 502.0625,894.9082 512.0625,898.9082 508.0625,894.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="490.0625" y1="208.8926" x2="490.0625" y2="228.8926" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="486.0625,218.8926 490.0625,228.8926 494.0625,218.8926 490.0625,222.8926" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <line x1="490.0625" y1="906.9082" x2="490.0625" y2="911.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="490.0625" y1="911.9082" x2="788.5" y2="911.9082" stroke-width="1" style="stroke:#181818;" />
+    <line x1="788.5" y1="911.9082" x2="788.5" y2="926.9082" stroke-width="1" style="stroke:#181818;" />
+    <polygon points="784.5,916.9082 788.5,926.9082 792.5,916.9082 788.5,920.9082" stroke-width="1" style="fill:#181818;stroke:#181818;" />
+    <text x="372" y="69.75" textLength="36" lengthAdjust="spacing" font-family="sans-serif" font-size="18" style="fill:black;">开始</text>
+    <text x="770" y="69.75" textLength="36" lengthAdjust="spacing" font-family="sans-serif" font-size="18" style="fill:black;">结束</text>
+  </g>
+  <title>流程图</title>
+  <metadata>
+    <RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:puv="https://github.com/Fruchtzwerg94/PlantUmlViewer" xmlns="rdf">
+      <puv:product>PlantUML Viewer by Philipp Schmidt</puv:product>
+      <puv:version>1.5.0.9</puv:version>
+      <puv:plantuml>1.2023.0</puv:plantuml>
+      <rdf:Description>
+        <dc:creator>S-FLOWX13\suxto</dc:creator>
+        <dc:date>2023-06-22T18:28:56.6506180Z</dc:date>
+        <dc:source>流程图.puml</dc:source>
+        <dc:title>流程图</dc:title>
+        <dc:format>image/svg</dc:format>
+        <puv:page>1</puv:page>
+        <puv:diagram>1</puv:diagram>
+      </rdf:Description>
+    </RDF>
+  </metadata>
+  <desc>@startuml 斗地主程序用户流程图
+title 斗地主程序用户流程图
+
+|开始|
+start
+
+:玩家登录;
+:进入游戏大厅;
+
+if (选择加入游戏) then (是)
+  :加入游戏房间;
+  if (等待游戏开始) then (是)
+    :等待其他玩家加入;
+  else (否)
+    :开始游戏;
+    repeat
+      if (轮到玩家出牌) then (是)
+        :玩家出牌;
+        if (牌型合法) then (是)
+          :出牌生效;
+          if (玩家手牌为空) then (是)
+            :游戏结束;
+          else (否)
+            :进入下一回合;
+          endif
+        else (否)
+          :提示牌型不合法;
+          :重新选择出牌;
+        endif
+      else (否)
+        :等待其他玩家出牌;
+      endif
+    repeat while (游戏未结束)
+  endif
+else (否)
+  :创建新的游戏房间;
+  :等待其他玩家加入;
+endif
+
+|结束|
+stop
+@enduml
+</desc>
+</svg>

@@ -1,0 +1,42 @@
+@startuml 斗地主程序用户流程图
+title 斗地主程序用户流程图
+
+|开始|
+start
+
+:玩家登录;
+:进入游戏大厅;
+
+if (选择加入游戏) then (是)
+  :加入游戏房间;
+  if (等待游戏开始) then (是)
+    :等待其他玩家加入;
+  else (否)
+    :开始游戏;
+    repeat
+      if (轮到玩家出牌) then (是)
+        :玩家出牌;
+        if (牌型合法) then (是)
+          :出牌生效;
+          if (玩家手牌为空) then (是)
+            :游戏结束;
+          else (否)
+            :进入下一回合;
+          endif
+        else (否)
+          :提示牌型不合法;
+          :重新选择出牌;
+        endif
+      else (否)
+        :等待其他玩家出牌;
+      endif
+    repeat while (游戏未结束)
+  endif
+else (否)
+  :创建新的游戏房间;
+  :等待其他玩家加入;
+endif
+
+|结束|
+stop
+@enduml
